@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}" class="current">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}">Símbolos Institucionales</a></li>
+                <li><a href="{{ url_for('imagenes') }}">Imágenes</a></li>
+                <li><a href="{{ url_for('icfes') }}">Preparación ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h2>{{ titulo }}</h2>
+                <p>Por llenar</p>
+                <p>La Institución Educativa Camilo Torres se compromete a ofrecer una educación de calidad, formando individuos críticos, responsables y comprometidos con su comunidad y el desarrollo sostenible.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // JavaScript para el menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            function closeMenu() {
+                if (mainNav && menuToggle) {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            function openMenu() {
+                if (mainNav && menuToggle) {
+                    mainNav.classList.add('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            if (menuToggle && mainNav) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-controls', 'main-navigation');
+                mainNav.setAttribute('id', 'main-navigation');
+
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if (mainNav.classList.contains('active')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (mainNav.classList.contains('active') && 
+                        !mainNav.contains(e.target) && 
+                        !menuToggle.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+                        closeMenu();
+                        menuToggle.focus();
+                    }
+                });
+
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 900 && mainNav.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

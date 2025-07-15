@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/Logocolegio.jpeg') }}" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">    
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}current{% endif %}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}" class="{% if request.path == url_for('quienes_somos') %}current{% endif %}">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}" class="{% if request.path == url_for('simbolos_institucionales') %}current{% endif %}">Símbolos Institucionales</a></li>
+                <li><a href="{{ url_for('imagenes') }}" class="{% if request.path == url_for('imagenes') %}current{% endif %}">Imágenes</a></li>
+                <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">Preparación ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="carousel-container">
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="{{ url_for('static', filename='images/escuela1.jpg') }}" alt="Escuela 1">
+                    <div class="caption">Bienvenidos a IE Camilo Torres</div>
+                </div>
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='images/escuela2.jpg') }}" alt="Escuela 2">
+                    <div class="caption">Formación integral con valores</div>
+                </div>
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
+                    <div class="caption">Innovación en la enseñanza</div>
+                </div>
+
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-links-section">
+            <div class="container social-links-container">
+                <a href="https://www.facebook.com/soycamilista" target="_blank" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/i.e.camilo.torres" target="_blank" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ie.camilo.torres.spu" target="_blank" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>🤖 Asistente Virtual</h2>
+                <p>¿Tienes preguntas sobre horarios, ICFES, matrículas o nuestra institución? ¡Nuestro chatbot está aquí para ayudarte!</p>
+                <div style="margin-top: 30px;">
+                    <a href="{{ url_for('chatbot') }}" class="icfes-button" style="display: inline-flex; max-width: 400px; margin: 0 auto;">
+                        <i class="fas fa-robot" style="font-size: 2.5em; margin-bottom: 15px;"></i>
+                        <div>
+                            <strong>Chatear Ahora</strong>
+                            <span>Obtén respuestas instantáneas a tus preguntas</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Noticias y Novedades</h2>
+                <p>Mantente al día con los últimos eventos y anuncios de nuestra institución.</p>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F1513869286238772%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                </iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F9943270275739858%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                    
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // JavaScript para el carrusel
+            const slides = document.querySelectorAll('.carousel .slide');
+            const dots = document.querySelectorAll('.carousel .dot');
+            const prevBtn = document.querySelector('.carousel .prev');
+            const nextBtn = document.querySelector('.carousel .next');
+            let current = 0;
+            let timer;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                current = index;
+            }
+
+            function nextSlide() {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }
+
+            function prevSlide() {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            }
+
+            function startAutoSlide() {
+                timer = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(timer);
+                startAutoSlide();
+            }
+
+            // Solo inicializar carrusel si existen los elementos
+            if (slides.length > 0 && dots.length > 0) {
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        showSlide(i);
+                        resetAutoSlide();
+                    });
+                });
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        resetAutoSlide();
+                    });
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        resetAutoSlide();
+                    });
+                }
+
+                showSlide(current);
+                startAutoSlide();
+            }
+
+            // JavaScript simple para el menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    console.log('Menu toggle clicked');
+                    mainNav.classList.toggle('active');
+                    
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Cerrar menú al hacer clic en un enlace
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

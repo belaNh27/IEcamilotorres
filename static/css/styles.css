@@ -1,0 +1,729 @@
+/* Estilos generales modernos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    color: #e8eaed;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header moderno con glassmorphism */
+.main-header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-height: 80px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 800;
+    background: linear-gradient(45deg, #ffd700, #32cd32, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo-text .highlight {
+    background: linear-gradient(45deg, #32cd32, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #e8eaed;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 25px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    background: linear-gradient(45deg, #ffd700, #32cd32);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    color: #000000;
+}
+
+.main-nav a.current {
+    background: linear-gradient(45deg, #32cd32, #ffd700);
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffd700;
+    font-size: 1.8em;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.menu-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #32cd32;
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle:focus {
+    outline: 2px solid #ffd700;
+}
+
+/* Espaciado para el header fijo */
+main {
+    margin-top: 100px;
+    position: relative;
+}
+
+/* Carrusel súper moderno */
+.carousel-container {
+    max-width: 1000px;
+    height: 600px;
+    margin: 60px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.carousel .slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel .slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.carousel .slide:hover img {
+    transform: scale(1.05);
+}
+
+.carousel .caption {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 24px;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+.next {
+    right: 30px;
+}
+
+.prev {
+    left: 30px;
+}
+
+.prev:hover, .next:hover {
+    background: linear-gradient(45deg, #ffd700, #32cd32);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.dots {
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    left: 0;
+    z-index: 9;
+}
+
+.dot {
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+    margin: 0 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.dot.active {
+    background: linear-gradient(45deg, #ffd700, #32cd32);
+    transform: scale(1.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+}
+
+/* Sección de redes sociales moderna */
+.social-links-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px 0;
+    text-align: center;
+    margin: 60px 20px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-icon {
+    font-size: 3em;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-10px) scale(1.1);
+    background: linear-gradient(45deg, #32cd32, #ffd700, #ffff00);
+    color: #000000;
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+}
+
+.social-icon.facebook:hover {
+    box-shadow: 0 15px 35px rgba(59, 89, 152, 0.4);
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    box-shadow: 0 15px 35px rgba(225, 48, 108, 0.4);
+}
+
+.social-icon.tiktok:hover {
+    background: linear-gradient(45deg, #ff0050, #00f2ea);
+    box-shadow: 0 15px 35px rgba(255, 0, 80, 0.4);
+}
+
+/* Sección de contenido moderna */
+.content-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 80px 0;
+    text-align: center;
+    margin: 60px 20px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.content-section h2 {
+    background: linear-gradient(45deg, #ffd700, #32cd32, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.content-section p {
+    font-size: 1.3em;
+    color: #b3b3b3;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Footer moderno */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    margin-top: 80px;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 1.1em;
+}
+
+/* Estilos para ICFES modernos */
+.icfes-resources-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 80px 0;
+    text-align: center;
+    margin: 60px 20px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.icfes-resources-section h3 {
+    background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.icfes-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 40px 30px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.icfes-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.icfes-button:hover::before {
+    left: 100%;
+}
+
+.icfes-button i {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00d4ff, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.icfes-button span {
+    font-size: 0.9em;
+    color: #b3b3b3;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.icfes-button:hover {
+    background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(255, 107, 107, 0.2));
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section, .social-links-section, .icfes-resources-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Estilos responsive */
+@media (max-width: 900px) {
+    .main-header {
+        padding: 15px 20px;
+        flex-wrap: nowrap;
+        min-height: 80px;
+        position: fixed;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        z-index: 1002;
+        position: relative;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 320px;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 100px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        border-left: 2px solid rgba(255, 215, 0, 0.3);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav.active {
+        right: 0 !important;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInRight 0.3s ease forwards;
+    }
+
+    .main-nav.active ul li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .main-nav ul li:nth-child(1) { animation-delay: 0.1s; }
+    .main-nav ul li:nth-child(2) { animation-delay: 0.2s; }
+    .main-nav ul li:nth-child(3) { animation-delay: 0.3s; }
+    .main-nav ul li:nth-child(4) { animation-delay: 0.4s; }
+    .main-nav ul li:nth-child(5) { animation-delay: 0.5s; }
+    .main-nav ul li:nth-child(6) { animation-delay: 0.6s; }
+    .main-nav ul li:nth-child(7) { animation-delay: 0.7s; }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 18px 25px;
+        text-align: center;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        font-size: 1.1em;
+        color: #ffffff;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+
+    .main-nav ul li a:hover,
+    .main-nav ul li a.current {
+        background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(50, 205, 50, 0.3));
+        border-color: #ffd700;
+        transform: translateX(10px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Overlay para cerrar el menú */
+    .main-nav.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 320px;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    main {
+        margin-top: 80px;
+    }
+
+    .carousel-container {
+        margin: 30px 20px;
+        height: 400px;
+    }
+
+    .button-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .content-section h2, .icfes-resources-section h3 {
+        font-size: 2.2em;
+    }
+
+    .social-links-container {
+        gap: 25px;
+    }
+
+    .content-section, .social-links-section, .icfes-resources-section {
+        margin: 40px 10px;
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 12px 15px;
+    }
+
+    .logo-link {
+        font-size: 1.4em;
+    }
+
+    .menu-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    main {
+        margin-top: 70px;
+    }
+
+    .carousel-container {
+        height: 280px;
+        margin: 20px 10px;
+        border-radius: 20px;
+    }
+
+    .carousel .caption {
+        font-size: 0.9em;
+        padding: 12px 20px;
+        bottom: 15px;
+        border-radius: 25px;
+    }
+
+    .prev, .next {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .next {
+        right: 15px;
+    }
+
+    .prev {
+        left: 15px;
+    }
+
+    .social-links-container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .social-icon {
+        font-size: 2.2em;
+        width: 65px;
+        height: 65px;
+    }
+
+    .content-section h2, .icfes-resources-section h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .content-section p {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+
+    .icfes-button {
+        padding: 25px 15px;
+        font-size: 1.1em;
+    }
+
+    .icfes-button i {
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+
+    .content-section, .social-links-section, .icfes-resources-section {
+        margin: 30px 5px;
+        padding: 40px 15px;
+        border-radius: 20px;
+    }
+}
+
+/* Efectos de partículas de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

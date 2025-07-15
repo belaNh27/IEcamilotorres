@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/Logocolegio.jpeg') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .chatbot-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chat-window {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            height: 450px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            scroll-behavior: smooth;
+        }
+        
+        .chat-window::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .chat-window::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .chat-window::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 18px;
+            max-width: 75%;
+            word-wrap: break-word;
+            clear: both;
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, #ffd700, #32cd32);
+            color: #000;
+            float: right;
+            text-align: left;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .bot-message {
+            background: rgba(255, 255, 255, 0.12);
+            color: #f0f0f0;
+            float: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chat-input-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #f0f0f0;
+            font-size: 1.1em;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-input::placeholder {
+            color: rgba(240, 240, 240, 0.6);
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .send-button {
+            background: linear-gradient(135deg, #ffd700, #32cd32);
+            color: #000;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .send-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .typing-indicator {
+            display: none;
+            color: #b3b3b3;
+            font-style: italic;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        .message-time {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .chatbot-container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .chat-window {
+                height: 350px;
+                padding: 15px;
+            }
+            
+            .message {
+                max-width: 85%;
+                padding: 10px 15px;
+            }
+            
+            .chat-input {
+                font-size: 1em;
+                padding: 12px 16px;
+            }
+            
+            .send-button {
+                padding: 12px 16px;
+                min-width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">    
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}">Símbolos Institucionales</a></li>
+                <li><a href="{{ url_for('imagenes') }}">Imágenes</a></li>
+                <li><a href="{{ url_for('icfes') }}">Preparación ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}" class="current">Chatbot</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h2>🤖 Asistente Virtual IE Camilo Torres</h2>
+                <p>¡Hola! Soy tu asistente virtual. Pregúntame sobre horarios, ICFES, matrículas y más.</p>
+                
+                <div class="chatbot-container">
+                    <div class="chat-window" id="chatWindow">
+                        <div class="message bot-message">
+                            ¡Hola! Soy el asistente virtual de la IE Camilo Torres. ¿En qué puedo ayudarte?
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="messageInput" placeholder="Escribe tu mensaje aquí..." autocomplete="off">
+                        <button class="send-button" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="typing-indicator" id="typingIndicator">
+                        El bot está escribiendo...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
+    </footer>
+
+    <script>
+        const chatWindow = document.getElementById('chatWindow');
+        const messageInput = document.getElementById('messageInput');
+        const typingIndicator = document.getElementById('typingIndicator');
+        const sendButton = document.querySelector('.send-button');
+
+        function addMessage(message, isUser = false, time = null) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            
+            const messageText = document.createElement('div');
+            messageText.textContent = message;
+            messageDiv.appendChild(messageText);
+            
+            if (time) {
+                const timeSpan = document.createElement('div');
+                timeSpan.className = 'message-time';
+                timeSpan.textContent = time;
+                messageDiv.appendChild(timeSpan);
+            }
+            
+            chatWindow.appendChild(messageDiv);
+            
+            // Crear un div de limpieza para manejar los floats
+            const clearDiv = document.createElement('div');
+            clearDiv.style.clear = 'both';
+            chatWindow.appendChild(clearDiv);
+            
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function showTyping() {
+            typingIndicator.style.display = 'block';
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function hideTyping() {
+            typingIndicator.style.display = 'none';
+        }
+
+        function disableInput(disabled) {
+            messageInput.disabled = disabled;
+            sendButton.disabled = disabled;
+        }
+
+        function getCurrentTime() {
+            return new Date().toLocaleTimeString('es-ES', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+        }
+
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message || messageInput.disabled) return;
+
+            const currentTime = getCurrentTime();
+            addMessage(message, true, currentTime);
+            messageInput.value = '';
+            
+            disableInput(true);
+            showTyping();
+
+            try {
+                const response = await fetch(window.location.origin + '/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage(data.message, false, data.timestamp || getCurrentTime());
+                    disableInput(false);
+                    messageInput.focus();
+                }, Math.random() * 1000 + 500); // Tiempo de respuesta más realista
+
+            } catch (error) {
+                console.error('Error:', error);
+                hideTyping();
+                addMessage('❌ Lo siento, hubo un error de conexión. Por favor intenta de nuevo.', false, getCurrentTime());
+                disableInput(false);
+                messageInput.focus();
+            }
+        }
+
+        // Event listeners
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        sendButton.addEventListener('click', sendMessage);
+
+        // Enfocar el input al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            messageInput.focus();
+            
+            // Menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                });
+            }
+            
+            // Mensaje de bienvenida con timestamp
+            const welcomeTime = getCurrentTime();
+            const existingWelcome = chatWindow.querySelector('.bot-message');
+            if (existingWelcome) {
+                const timeSpan = document.createElement('div');
+                timeSpan.className = 'message-time';
+                timeSpan.textContent = welcomeTime;
+                existingWelcome.appendChild(timeSpan);
+            }
+        });
+
+        // Prevenir envío de formulario accidental
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.target === messageInput && !e.shiftKey) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

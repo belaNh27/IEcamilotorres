@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">
+                <img src="{{ url_for('static', filename='images/header-photo.jpg') }}" alt="Logo Institucional" class="header-logo">
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}" class="current">Símbolos Institucionales</a></li>
+                <li><a href="{{ url_for('imagenes') }}">Imágenes</a></li>
+                <li><a href="{{ url_for('icfes') }}">Preparación ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h2>{{ titulo }}</h2>
+                <p>Aquí puedes describir los símbolos institucionales: el escudo, la bandera, el himno, etc.</p>
+                <p>Nuestro escudo representa la visión de progreso y conocimiento, la bandera, la esperanza y la vitalidad de nuestra comunidad.</p>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
