@@ -35,7 +35,7 @@ def anexos():
     return render_template('anexos.html', titulo="Anexos - IE Camilo Torres")
 
 @app.route("/tec")
-def index():
+def tec():
     return render_template("tec.html")
 
 
