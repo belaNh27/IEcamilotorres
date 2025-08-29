@@ -34,6 +34,11 @@ def icfes():
 def anexos():
     return render_template('anexos.html', titulo="Anexos - IE Camilo Torres")
 
+@app.route("/tec")
+def index():
+    return render_template("tec.html")
+
+
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html', titulo="Chatbot - IE Camilo Torres")
