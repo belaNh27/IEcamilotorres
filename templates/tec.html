@@ -249,7 +249,32 @@
     </div>
   </section>
 
-            <style>
+<style>
+
+    <style>
+  /* Forzar scroll si algo lo bloquea */
+  html, body {
+    height: auto !important;
+    overflow: auto !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  /* Asegura que ningún contenedor de primer nivel o .site-root tenga overflow oculto */
+  .site-root, .app-root, main, .page {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Si tienes un overlay transparente cubriendo todo, normalmente se identifica con fixed + full size.
+     Esto lo hace no interactivo (permite scroll a través) - SOLO como parche temporal
+  */
+  [style*="position:fixed"][style*="width:100%"][style*="height:100%"],
+  .overlay, .modal-backdrop {
+    pointer-events: none !important;
+  }
+</style>
+            
   :root{
     --content-width:1100px;
     --badge-bg: rgba(255,255,255,0.06);
