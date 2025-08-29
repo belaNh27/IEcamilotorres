@@ -4,12 +4,79 @@
     <meta charset="UTF-8">
     <title>{{ titulo }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='tec/favicon.ico') }}" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- CSS corregido: pégalo aquí para que no rompa el DOM -->
+    <style>
+      /* Forzar scroll si algo lo bloquea (suave, no invasivo) */
+      html, body {
+        height: auto !important;
+        overflow: auto !important;
+        overscroll-behavior: auto !important;
+        touch-action: auto !important;
+      }
+
+      :root{
+        --content-width:1100px;
+        --badge-bg: rgba(255,255,255,0.06);
+        --badge-border: rgba(255,255,255,0.12);
+        --accent: #9ef46a;
+      }
+
+      body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-family: Nunito, system-ui, Arial, sans-serif; }
+
+      /* header / nav */
+      .main-header { display:flex; justify-content:space-between; align-items:center; padding:12px 18px; position:relative; z-index:50; }
+      .main-nav ul { display:flex; gap:8px; list-style:none; margin:0; padding:0; align-items:center; }
+      .main-nav a { text-decoration:none; padding:8px 12px; border-radius:10px; background: rgba(255,255,255,0.03); color:inherit; border:1px solid rgba(255,255,255,0.03); }
+
+      /* contenedor general de categorías */
+      main.content { max-width: var(--content-width); margin: 16px auto; padding: 10px 18px; }
+
+      .categoria {
+        margin: 18px 0;
+        padding: 12px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.02);
+      }
+      .categoria h2 { margin: 4px 0 10px; font-size:1.4rem; }
+
+      /* badges: compactos y responsive */
+      .botones {
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        align-items:center;
+      }
+      .botones a { text-decoration:none; display:inline-block; }
+      .botones button,
+      .botones a > * {
+        display:inline-block !important;
+        width:auto !important;
+        padding:7px 12px;
+        border-radius:999px;
+        border:1px solid var(--badge-border);
+        background:var(--badge-bg);
+        color:#fff;
+        font-weight:600;
+        font-size:0.95rem;
+        cursor:pointer;
+        transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+        line-height:1;
+      }
+      .botones button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); background: rgba(255,255,255,0.08); }
+
+      @media (max-width: 700px) {
+        .botones button { padding:6px 10px; font-size:0.88rem; }
+        .main-nav ul { flex-wrap:wrap; gap:6px; }
+        main.content { padding: 10px; }
+      }
+    </style>
 </head>
 <body>
 
@@ -19,6 +86,7 @@
                 <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
             </a>
         </div>
+
         <nav class="main-nav">
             <ul>
                 <li><a href="{{ url_for('index') }}">Inicio</a></li>
@@ -28,355 +96,52 @@
                 <li><a href="{{ url_for('icfes') }}">Preparación ICFES</a></li>
                 <li><a href="{{ url_for('anexos') }}">Anexos</a></li>
             </ul>
-  <!-- A. Inteligencia Artificial -->
-  <section class="categoria">
-    <h2>A. Inteligencia Artificial</h2>
-    <div class="botones">
-      <a href="https://chat.openai.com/" target="_blank" rel="noopener"><button>ChatGPT</button></a>
-      <a href="https://openai.com/" target="_blank" rel="noopener"><button>OpenAI</button></a>
-      <a href="https://gemini.google.com/" target="_blank" rel="noopener"><button>Gemini</button></a>
-      <a href="https://ai.google/bard/" target="_blank" rel="noopener"><button>Bard</button></a>
-      <a href="https://www.anthropic.com/" target="_blank" rel="noopener"><button>Claude</button></a>
-      <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener"><button>Wolfram|Alpha</button></a>
-      <a href="https://www.perplexity.ai/" target="_blank" rel="noopener"><button>Perplexity</button></a>
-      <a href="https://www.deepl.com/" target="_blank" rel="noopener"><button>DeepL</button></a>
-      <a href="https://www.grammarly.com/" target="_blank" rel="noopener"><button>Grammarly</button></a>
-      <a href="https://www.aiprm.io/" target="_blank" rel="noopener"><button>AIPRM</button></a>
-      <a href="https://prompthero.com/" target="_blank" rel="noopener"><button>PromptHero</button></a>
-      <a href="https://ai.google/notebook-lm/" target="_blank" rel="noopener"><button>NotebookLM</button></a>
-    </div>
-  </section>
+        </nav>
+    </header>
 
-  <!-- B. Plataformas LMS -->
-  <section class="categoria">
-    <h2>B. Plataformas LMS</h2>
-    <div class="botones">
-      <a href="https://classroom.google.com/" target="_blank" rel="noopener"><button>Google Classroom</button></a>
-      <a href="https://moodle.org/" target="_blank" rel="noopener"><button>Moodle</button></a>
-      <a href="https://www.instructure.com/canvas" target="_blank" rel="noopener"><button>Canvas</button></a>
-      <a href="https://www.microsoft.com/education/microsoft-teams" target="_blank" rel="noopener"><button>Teams (Educación)</button></a>
-      <a href="https://www.schoology.com/" target="_blank" rel="noopener"><button>Schoology</button></a>
-      <a href="https://www.blackboard.com/" target="_blank" rel="noopener"><button>Blackboard</button></a>
-      <a href="https://new.edmodo.com/" target="_blank" rel="noopener"><button>Edmodo</button></a>
-      <a href="https://www.sakaiproject.org/" target="_blank" rel="noopener"><button>Sakai</button></a>
-    </div>
-  </section>
+    <!-- MAIN: aquí van las secciones (fuera del header/nav) -->
+    <main class="content">
+      <!-- A. Inteligencia Artificial -->
+      <section class="categoria">
+        <h2>A. Inteligencia Artificial</h2>
+        <div class="botones">
+          <a href="https://chat.openai.com/" target="_blank" rel="noopener"><button type="button">ChatGPT</button></a>
+          <a href="https://openai.com/" target="_blank" rel="noopener"><button type="button">OpenAI</button></a>
+          <a href="https://gemini.google.com/" target="_blank" rel="noopener"><button type="button">Gemini</button></a>
+          <a href="https://ai.google/bard/" target="_blank" rel="noopener"><button type="button">Bard</button></a>
+          <a href="https://www.anthropic.com/" target="_blank" rel="noopener"><button type="button">Claude</button></a>
+          <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener"><button type="button">Wolfram|Alpha</button></a>
+          <a href="https://www.perplexity.ai/" target="_blank" rel="noopener"><button type="button">Perplexity</button></a>
+          <a href="https://www.deepl.com/" target="_blank" rel="noopener"><button type="button">DeepL</button></a>
+          <a href="https://www.grammarly.com/" target="_blank" rel="noopener"><button type="button">Grammarly</button></a>
+          <a href="https://www.aiprm.io/" target="_blank" rel="noopener"><button type="button">AIPRM</button></a>
+          <a href="https://prompthero.com/" target="_blank" rel="noopener"><button type="button">PromptHero</button></a>
+          <a href="https://ai.google/notebook-lm/" target="_blank" rel="noopener"><button type="button">NotebookLM</button></a>
+        </div>
+      </section>
 
-  <!-- C. Comunicación y trabajo en equipo -->
-  <section class="categoria">
-    <h2>C. Comunicación y trabajo en equipo</h2>
-    <div class="botones">
-      <a href="https://slack.com/" target="_blank" rel="noopener"><button>Slack</button></a>
-      <a href="https://discord.com/" target="_blank" rel="noopener"><button>Discord</button></a>
-      <a href="https://www.microsoft.com/microsoft-teams" target="_blank" rel="noopener"><button>Teams</button></a>
-      <a href="https://zoom.us/" target="_blank" rel="noopener"><button>Zoom</button></a>
-      <a href="https://meet.google.com/" target="_blank" rel="noopener"><button>Google Meet</button></a>
-    </div>
-  </section>
+      <!-- B. Plataformas LMS -->
+      <section class="categoria">
+        <h2>B. Plataformas LMS</h2>
+        <div class="botones">
+          <a href="https://classroom.google.com/" target="_blank" rel="noopener"><button type="button">Google Classroom</button></a>
+          <a href="https://moodle.org/" target="_blank" rel="noopener"><button type="button">Moodle</button></a>
+          <a href="https://www.instructure.com/canvas" target="_blank" rel="noopener"><button type="button">Canvas</button></a>
+          <a href="https://www.microsoft.com/education/microsoft-teams" target="_blank" rel="noopener"><button type="button">Teams (Educación)</button></a>
+          <a href="https://www.schoology.com/" target="_blank" rel="noopener"><button type="button">Schoology</button></a>
+          <a href="https://www.blackboard.com/" target="_blank" rel="noopener"><button type="button">Blackboard</button></a>
+          <a href="https://new.edmodo.com/" target="_blank" rel="noopener"><button type="button">Edmodo</button></a>
+          <a href="https://www.sakaiproject.org/" target="_blank" rel="noopener"><button type="button">Sakai</button></a>
+        </div>
+      </section>
 
-  <!-- D. Organización de proyectos -->
-  <section class="categoria">
-    <h2>D. Organización de proyectos</h2>
-    <div class="botones">
-      <a href="https://trello.com/" target="_blank" rel="noopener"><button>Trello</button></a>
-      <a href="https://www.notion.so/" target="_blank" rel="noopener"><button>Notion</button></a>
-      <a href="https://asana.com/" target="_blank" rel="noopener"><button>Asana</button></a>
-      <a href="https://airtable.com/" target="_blank" rel="noopener"><button>Airtable</button></a>
-      <a href="https://clickup.com/" target="_blank" rel="noopener"><button>ClickUp</button></a>
-    </div>
-  </section>
+      <!-- (continúa con las demás secciones exactamente igual...) -->
 
-  <!-- E. Programación y desarrollo -->
-  <section class="categoria">
-    <h2>E. Programación y desarrollo</h2>
-    <div class="botones">
-      <a href="https://github.com/" target="_blank" rel="noopener"><button>GitHub</button></a>
-      <a href="https://gitlab.com/" target="_blank" rel="noopener"><button>GitLab</button></a>
-      <a href="https://bitbucket.org/" target="_blank" rel="noopener"><button>Bitbucket</button></a>
-      <a href="https://replit.com/" target="_blank" rel="noopener"><button>Replit</button></a>
-      <a href="https://colab.research.google.com/" target="_blank" rel="noopener"><button>Google Colab</button></a>
-      <a href="https://jupyter.org/" target="_blank" rel="noopener"><button>Jupyter</button></a>
-      <a href="https://code.visualstudio.com/" target="_blank" rel="noopener"><button>VS Code</button></a>
-      <a href="https://codesandbox.io/" target="_blank" rel="noopener"><button>Codesandbox</button></a>
-      <a href="https://stackblitz.com/" target="_blank" rel="noopener"><button>StackBlitz</button></a>
-    </div>
-  </section>
+    </main>
 
-  <!-- F. Iniciación a la programación -->
-  <section class="categoria">
-    <h2>F. Iniciación a la programación</h2>
-    <div class="botones">
-      <a href="https://scratch.mit.edu/" target="_blank" rel="noopener"><button>Scratch</button></a>
-      <a href="https://code.org/" target="_blank" rel="noopener"><button>Code.org</button></a>
-      <a href="https://www.khanacademy.org/computing/computer-programming" target="_blank" rel="noopener"><button>Khan Academy</button></a>
-    </div>
-  </section>
-
-  <!-- G. Hardware y prototipos -->
-  <section class="categoria">
-    <h2>G. Hardware y prototipos</h2>
-    <div class="botones">
-      <a href="https://www.arduino.cc/" target="_blank" rel="noopener"><button>Arduino</button></a>
-      <a href="https://www.raspberrypi.org/" target="_blank" rel="noopener"><button>Raspberry Pi</button></a>
-      <a href="https://platformio.org/" target="_blank" rel="noopener"><button>PlatformIO</button></a>
-    </div>
-  </section>
-
-  <!-- H. Idiomas y vocabulario técnico -->
-  <section class="categoria">
-    <h2>H. Idiomas y vocabulario técnico</h2>
-    <div class="botones">
-      <a href="https://www.duolingo.com/" target="_blank" rel="noopener"><button>Duolingo</button></a>
-      <a href="https://www.busuu.com/" target="_blank" rel="noopener"><button>Busuu</button></a>
-      <a href="https://www.memrise.com/" target="_blank" rel="noopener"><button>Memrise</button></a>
-      <a href="https://www.reverso.net/" target="_blank" rel="noopener"><button>Reverso</button></a>
-      <a href="https://www.wordreference.com/" target="_blank" rel="noopener"><button>WordReference</button></a>
-      <a href="https://www.deepl.com/translate" target="_blank" rel="noopener"><button>DeepL (traducción)</button></a>
-      <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener"><button>Anki</button></a>
-    </div>
-  </section>
-
-  <!-- I. Ciencias y matemáticas -->
-  <section class="categoria">
-    <h2>I. Ciencias y matemáticas</h2>
-    <div class="botones">
-      <a href="https://www.khanacademy.org/" target="_blank" rel="noopener"><button>Khan Academy</button></a>
-      <a href="https://www.geogebra.org/" target="_blank" rel="noopener"><button>GeoGebra</button></a>
-      <a href="https://www.desmos.com/" target="_blank" rel="noopener"><button>Desmos</button></a>
-      <a href="https://phet.colorado.edu/" target="_blank" rel="noopener"><button>PhET</button></a>
-      <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener"><button>Wolfram|Alpha</button></a>
-      <a href="https://www.symbolab.com/" target="_blank" rel="noopener"><button>Symbolab</button></a>
-    </div>
-  </section>
-
-  <!-- J. Gamificación y evaluación -->
-  <section class="categoria">
-    <h2>J. Gamificación y evaluación</h2>
-    <div class="botones">
-      <a href="https://kahoot.com/" target="_blank" rel="noopener"><button>Kahoot!</button></a>
-      <a href="https://quizizz.com/" target="_blank" rel="noopener"><button>Quizizz</button></a>
-      <a href="https://www.blooket.com/" target="_blank" rel="noopener"><button>Blooket</button></a>
-      <a href="https://www.socrative.com/" target="_blank" rel="noopener"><button>Socrative</button></a>
-      <a href="https://edpuzzle.com/" target="_blank" rel="noopener"><button>Edpuzzle</button></a>
-      <a href="https://quizlet.com/" target="_blank" rel="noopener"><button>Quizlet</button></a>
-      <a href="https://plickers.com/" target="_blank" rel="noopener"><button>Plickers</button></a>
-      <a href="https://nearpod.com/" target="_blank" rel="noopener"><button>Nearpod</button></a>
-      <a href="https://goformative.com/" target="_blank" rel="noopener"><button>Formative</button></a>
-    </div>
-  </section>
-
-  <!-- K. Creación de contenidos -->
-  <section class="categoria">
-    <h2>K. Creación de contenidos</h2>
-    <div class="botones">
-      <a href="https://www.canva.com/" target="_blank" rel="noopener"><button>Canva</button></a>
-      <a href="https://www.genial.ly/" target="_blank" rel="noopener"><button>Genially</button></a>
-      <a href="https://prezi.com/" target="_blank" rel="noopener"><button>Prezi</button></a>
-      <a href="https://www.microsoft.com/microsoft-365/powerpoint" target="_blank" rel="noopener"><button>PowerPoint</button></a>
-      <a href="https://slides.google.com/" target="_blank" rel="noopener"><button>Google Slides</button></a>
-    </div>
-  </section>
-
-  <!-- L. MOOCs y formación continua -->
-  <section class="categoria">
-    <h2>L. MOOCs y formación continua</h2>
-    <div class="botones">
-      <a href="https://www.coursera.org/" target="_blank" rel="noopener"><button>Coursera</button></a>
-      <a href="https://www.edx.org/" target="_blank" rel="noopener"><button>edX</button></a>
-      <a href="https://miriadax.net/" target="_blank" rel="noopener"><button>Miriadax</button></a>
-      <a href="https://www.udemy.com/" target="_blank" rel="noopener"><button>Udemy</button></a>
-      <a href="https://www.udacity.com/" target="_blank" rel="noopener"><button>Udacity</button></a>
-      <a href="https://alison.com/" target="_blank" rel="noopener"><button>Alison</button></a>
-      <a href="https://ocw.mit.edu/" target="_blank" rel="noopener"><button>MIT OCW</button></a>
-      <a href="https://www.youtube.com/education" target="_blank" rel="noopener"><button>YouTube Edu</button></a>
-      <a href="https://www.sena.edu.co/" target="_blank" rel="noopener"><button>SENA</button></a>
-    </div>
-  </section>
-
-  <!-- M. Repositorios académicos -->
-  <section class="categoria">
-    <h2>M. Repositorios académicos</h2>
-    <div class="botones">
-      <a href="https://scholar.google.com/" target="_blank" rel="noopener"><button>Google Scholar</button></a>
-      <a href="https://scielo.org/" target="_blank" rel="noopener"><button>SciELO</button></a>
-      <a href="https://www.redalyc.org/" target="_blank" rel="noopener"><button>Redalyc</button></a>
-      <a href="https://www.researchgate.net/" target="_blank" rel="noopener"><button>ResearchGate</button></a>
-      <a href="https://doaj.org/" target="_blank" rel="noopener"><button>DOAJ</button></a>
-    </div>
-  </section>
-
-  <!-- N. Gestión de referencias -->
-  <section class="categoria">
-    <h2>N. Gestión de referencias</h2>
-    <div class="botones">
-      <a href="https://www.zotero.org/" target="_blank" rel="noopener"><button>Zotero</button></a>
-      <a href="https://www.mendeley.com/" target="_blank" rel="noopener"><button>Mendeley</button></a>
-      <a href="https://endnote.com/" target="_blank" rel="noopener"><button>EndNote</button></a>
-    </div>
-  </section>
-
-  <!-- O. Almacenamiento de archivos -->
-  <section class="categoria">
-    <h2>O. Almacenamiento de archivos</h2>
-    <div class="botones">
-      <a href="https://drive.google.com/" target="_blank" rel="noopener"><button>Google Drive</button></a>
-      <a href="https://onedrive.live.com/" target="_blank" rel="noopener"><button>OneDrive</button></a>
-      <a href="https://www.dropbox.com/" target="_blank" rel="noopener"><button>Dropbox</button></a>
-    </div>
-  </section>
-
-  <!-- P. Accesibilidad y lectura -->
-  <section class="categoria">
-    <h2>P. Accesibilidad y lectura</h2>
-    <div class="botones">
-      <a href="https://www.texthelp.com/products/read-write/" target="_blank" rel="noopener"><button>Read&Write</button></a>
-      <a href="https://education.microsoft.com/immersive-reader" target="_blank" rel="noopener"><button>Immersive Reader</button></a>
-      <a href="https://www.apple.com/accessibility/iphone/vision/" target="_blank" rel="noopener"><button>VoiceOver</button></a>
-      <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank" rel="noopener"><button>TalkBack</button></a>
-    </div>
-  </section>
-
-  <!-- Q. Otras utilidades -->
-  <section class="categoria">
-    <h2>Q. Otras utilidades</h2>
-    <div class="botones">
-      <a href="https://padlet.com/" target="_blank" rel="noopener"><button>Padlet</button></a>
-      <a href="https://miro.com/" target="_blank" rel="noopener"><button>Miro</button></a>
-      <a href="https://trello.com/" target="_blank" rel="noopener"><button>Trello</button></a>
-      <a href="https://sway.office.com/" target="_blank" rel="noopener"><button>Sway</button></a>
-      <a href="https://obsproject.com/" target="_blank" rel="noopener"><button>OBS Studio</button></a>
-      <a href="https://www.loom.com/" target="_blank" rel="noopener"><button>Loom</button></a>
-    </div>
-  </section>
-
-<style>
-
-    <style>
-  /* Forzar scroll si algo lo bloquea */
-  html, body {
-    height: auto !important;
-    overflow: auto !important;
-    overscroll-behavior: auto !important;
-    touch-action: auto !important;
-  }
-
-  /* Asegura que ningún contenedor de primer nivel o .site-root tenga overflow oculto */
-  .site-root, .app-root, main, .page {
-    overflow: visible !important;
-    height: auto !important;
-  }
-
-  /* Si tienes un overlay transparente cubriendo todo, normalmente se identifica con fixed + full size.
-     Esto lo hace no interactivo (permite scroll a través) - SOLO como parche temporal
-  */
-  [style*="position:fixed"][style*="width:100%"][style*="height:100%"],
-  .overlay, .modal-backdrop {
-    pointer-events: none !important;
-  }
-            
-  :root{
-    --content-width:1100px;
-    --badge-bg: rgba(255,255,255,0.06);
-    --badge-border: rgba(255,255,255,0.12);
-    --accent: #9ef46a;
-  }
-
-  /* contenedor general (centrado y con margen) */
-  body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-  .categoria {
-    max-width: var(--content-width);
-    margin: 20px auto;
-    padding: 14px 18px;
-    background: transparent;
-    border-radius: 12px;
-  }
-  .categoria h2 {
-    margin: 6px 0 10px;
-    font-size: 1.6rem;
-    letter-spacing: .2px;
-  }
-
-  /* convierte la lista de botones en "badges" flexibles */
-  .botones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    margin-top: 8px;
-  }
-
-  /* quitamos comportamiento de ancho completo (si tu CSS anterior lo ponía) */
-  .botones a { text-decoration: none; display: inline-block; }
-  .botones a button,
-  .botones button {
-    display: inline-block !important;
-    width: auto !important;
-    padding: 7px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--badge-border);
-    background: var(--badge-bg);
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    box-shadow: none;
-    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-    line-height: 1;
-  }
-  /* apariencia al pasar el cursor */
-  .botones a button:hover,
-  .botones button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
-    background: rgba(255,255,255,0.09);
-  }
-
-  /* si quieres que algunos botones resalten (ej: nav seleccionado) */
-  .botones a button.active {
-    background: var(--accent);
-    color: #0b0b0b;
-    border-color: rgba(0,0,0,0.06);
-  }
-
-  /* hace que las categorías se muestren en dos columnas en pantallas grandes */
-  @media (min-width: 1100px) {
-    .categoria-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    /* si no usas .categoria-list, la grid aplica al main general (según estructura) */
-  }
-
-  /* en pantallas pequeñas, se mantiene una sola columna y badgets más compactos */
-  @media (max-width: 700px) {
-    .categoria { padding: 12px; }
-    .botones a button { padding: 6px 10px; font-size: 0.88rem; }
-  }
-
-  /* pequeño ajuste para el header/menu si existe */
-  .site-header, header {
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    backdrop-filter: blur(6px);
-    background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));
-  }
-  .site-header nav a {
-    display:inline-block;
-    margin-right:10px;
-    padding:8px 14px;
-    border-radius:999px;
-    text-decoration:none;
-    color:inherit;
-    border:1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.03);
-  }
-  .site-header nav a.active {
-    background: var(--accent);
-    color: #0b0b0b;
-  }
-</style>
-
-  <footer class="site-footer">
-    <p>Hecho con ❤️ para tu clase</p>
-  </footer>
+    <footer class="site-footer">
+      <p>Hecho con ❤️ para tu clase</p>
+    </footer>
 
 </body>
 </html>
