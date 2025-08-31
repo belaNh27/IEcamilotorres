@@ -727,3 +727,24 @@ body::before {
         transform: translateX(0);
     }
 }
+button {
+  background: linear-gradient(135deg, #4facfe, #00f2fe); /* Degradado */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animación suave */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra */
+}
+
+button:hover {
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+button:active {
+  transform: scale(0.95); /* Al hacer clic */
+}
