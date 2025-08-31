@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
     color: #e8eaed;
     overflow-x: hidden;
+    padding-top: 80px;  /* 👈 igual al min-height del header */
 }
 
 .container {
