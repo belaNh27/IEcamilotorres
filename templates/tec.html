@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <title>{{ titulo }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ url_for('static', filename='tec/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
 
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}" class="current">Quiénes Somos</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}">Símbolos Institucionales</a></li>
+                <li><a href="{{ url_for('imagenes') }}">Imágenes</a></li>
+                <li><a href="{{ url_for('icfes') }}">Preparación ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
     <!-- CSS corregido: pégalo aquí para que no rompa el DOM -->
     <style>
       /* Forzar scroll si algo lo bloquea (suave, no invasivo) */
