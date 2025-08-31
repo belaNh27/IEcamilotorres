@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,7 +35,10 @@
             <i class="fas fa-bars"></i>
         </button>
     </header>
-    
+
+    <main>
+        <section class="content-section">
+            <div class="container">
   <!-- A. Inteligencia Artificial -->
   <div class="categoria">
     <h2>A. Inteligencia Artificial</h2>
@@ -255,14 +259,95 @@
       <a href="https://www.loom.com/" target="_blank"><button>Loom</button></a>
     </div>
   </div>
-
-      <!-- (continúa con las demás secciones exactamente igual...) -->
-
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-      <p>Hecho con ❤️ para tu clase</p>
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // JavaScript para el menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            function closeMenu() {
+                if (mainNav && menuToggle) {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            function openMenu() {
+                if (mainNav && menuToggle) {
+                    mainNav.classList.add('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            if (menuToggle && mainNav) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-controls', 'main-navigation');
+                mainNav.setAttribute('id', 'main-navigation');
+
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if (mainNav.classList.contains('active')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (mainNav.classList.contains('active') && 
+                        !mainNav.contains(e.target) && 
+                        !menuToggle.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+                        closeMenu();
+                        menuToggle.focus();
+                    }
+                });
+
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 900 && mainNav.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+    
 
 </body>
 </html>
