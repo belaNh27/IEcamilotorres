@@ -729,7 +729,7 @@ body::before {
     }
 }
 button {
-  background: linear-gradient(135deg, #4facfe, #00f2fe); /* Degradado */
+  background: linear-gradient(135deg, #00ff44, #009456); /* Degradado */
   color: white;
   border: none;
   padding: 12px 24px;
