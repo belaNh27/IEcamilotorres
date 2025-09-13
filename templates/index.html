@@ -52,11 +52,13 @@
                     <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
                     <div class="caption">Innovación en la enseñanza</div>
                 </div>
-
-             <div class="slide">
-                    <img src="{{ url_for('static', filename='images/static/images/Green and Grey Simple Nature Presentation.png') }}" alt="Escuela 4">
+                <div class="slide">
+                    <a href="https://tuenlace.com" target="_blank">
+                        <img src="{{ url_for('static', filename='images/Green_and_Grey_Presentation.png') }}" alt="Escuela 4">
+                    </a>
                     <div class="caption">Ingresa!</div>
                 </div>
+
                 <a class="prev">&#10094;</a>
                 <a class="next">&#10095;</a>
 
@@ -64,11 +66,11 @@
                     <span class="dot active"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </section>
 
-      
         <section class="content-section">
             <div class="container">
                 <h2></h2>
@@ -85,7 +87,6 @@
             </div>
         </section>
 
-        
         <section class="social-links-section">
             <div class="container social-links-container">
                 <a href="https://www.facebook.com/soycamilista" target="_blank" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -114,11 +115,8 @@
             <div class="container">
                 <h2>Noticias y Novedades</h2>
                 <p>Mantente al día con los últimos eventos y anuncios de nuestra institución.</p>
-                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F1513869286238772%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
-                </iframe>
-                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F9943270275739858%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
-                    
-                </iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F1513869286238772%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F9943270275739858%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
             </div>
         </section>
     </main>
@@ -164,7 +162,6 @@
                 startAutoSlide();
             }
 
-            // Solo inicializar carrusel si existen los elementos
             if (slides.length > 0 && dots.length > 0) {
                 dots.forEach((dot, i) => {
                     dot.addEventListener('click', () => {
@@ -191,13 +188,12 @@
                 startAutoSlide();
             }
 
-            // JavaScript simple para el menú móvil
+            // Menú móvil
             const menuToggle = document.querySelector('.menu-toggle');
             const mainNav = document.querySelector('.main-nav');
 
             if (menuToggle && mainNav) {
                 menuToggle.addEventListener('click', function() {
-                    console.log('Menu toggle clicked');
                     mainNav.classList.toggle('active');
                     
                     const icon = menuToggle.querySelector('i');
@@ -210,7 +206,6 @@
                     }
                 });
 
-                // Cerrar menú al hacer clic en un enlace
                 const navLinks = mainNav.querySelectorAll('a');
                 navLinks.forEach(link => {
                     link.addEventListener('click', () => {
