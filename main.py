@@ -38,7 +38,10 @@ def anexos():
 def tec():
     return render_template("tec.html")
 
-
+@app.route('/feria')
+def feria():
+    return render_template('feria.html', titulo="Feria Educativa")
+    
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html', titulo="Chatbot - IE Camilo Torres")
