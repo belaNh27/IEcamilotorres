@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/Logocolegio.jpeg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="simple-header">
+        <a href="{{ url_for('index') }}" class="back-link">← Volver a la página principal</a>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h1>🌟 Feria Educativa</h1>
+                <p>Bienvenido al espacio de la feria institucional.</p>
+                <p>Aquí se podrán mostrar presentaciones, fotos, videos o enlaces relacionados con los proyectos de los estudiantes.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Institución Educativa Camilo Torres &copy; 2025</p>
+    </footer>
+</body>
+</html>
