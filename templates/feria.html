@@ -2,165 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{{ titulo }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ url_for('static', filename='images/Logocolegio.jpeg') }}" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
+    <title>Presentación - Escuela</title>
+    <!-- Cargar tu CSS principal -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 20px;
+        /* Botón de volver (puedes moverlo a tu styles.css si prefieres) */
+        .btn-volver {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a9d8f;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .btn-volver:hover {
+            background-color: #21867a;
         }
 
-        h1 {
+        /* Contenedor centrado */
+        .presentacion {
+            max-width: 1000px;
+            margin: 40px auto;
             text-align: center;
-            margin-bottom: 20px;
         }
 
-        /* Contenedor principal */
-        .carrusel {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            height: 500px;
-            margin: 0 auto;
-            overflow: hidden;
-            border: 3px solid #444; /* Bordes cuadrados */
-            background: #000;
+        .imagen-presentacion {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        /* Caja que contiene las imágenes */
-        .carrusel-inner {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.8s ease-in-out;
-            height: 100%;
-        }
-
-        /* Cada diapositiva */
-        .carrusel-item {
-            min-height: 100%;
-            flex-shrink: 0;
-        }
-
-        .carrusel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Botones */
-        .carrusel button {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            border: none;
-            padding: 12px 18px;
-            cursor: pointer;
-            font-size: 20px;
-            z-index: 10;
-        }
-
-        .btn-up {
-            top: 10px;
-        }
-
-        .btn-down {
-            bottom: 10px;
-        }
-
-        .carrusel button:hover {
-            background: rgba(0,0,0,0.9);
+        .volver {
+            margin: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Presentación de la Escuela</h1>
+    </header>
 
-    <h1>Carrusel Automático + Botones</h1>
+    <main>
+        <!-- 🔹 Aquí puedes insertar la imagen o el iframe de Canva -->
+        <div class="presentacion">
+            <!-- Ejemplo con imagen -->
+            <img src="{{ url_for('static', filename='images/Green and Grey Simple Nature Presentation.png') }}" 
+                 alt="Presentación Escuela" class="imagen-presentacion">
 
-    <div class="carrusel">
-        <div class="carrusel-inner">
-            <div class="carrusel-item">
-                <a href="https://ejemplo1.com">
-                    <img src="{{ url_for('static', filename='images/img1.png') }}" alt="Diapositiva 1">
-                </a>
-            </div>
-            <div class="carrusel-item">
-                <a href="https://ejemplo2.com">
-                    <img src="{{ url_for('static', filename='images/img2.png') }}" alt="Diapositiva 2">
-                </a>
-            </div>
-            <div class="carrusel-item">
-                <a href="https://ejemplo3.com">
-                    <img src="{{ url_for('static', filename='images/img3.png') }}" alt="Diapositiva 3">
-                </a>
-            </div>
-            <div class="carrusel-item">
-                <a href="https://ejemplo4.com">
-                    <img src="{{ url_for('static', filename='images/img4.png') }}" alt="Diapositiva 4">
-                </a>
-            </div>
+            <!-- Ejemplo con iframe (cuando lo pegues desde Canva, reemplazas lo de arriba)
+            <iframe src="URL_DE_TU_CANVA" width="100%" height="600" style="border:none;" allowfullscreen></iframe>
+            -->
         </div>
 
-        <!-- Botones -->
-        <button class="btn-up"><i class="fas fa-chevron-up"></i></button>
-        <button class="btn-down"><i class="fas fa-chevron-down"></i></button>
-    </div>
+        <!-- Botón para volver al inicio -->
+        <div class="volver">
+            <a href="{{ url_for('index') }}" class="btn-volver">⬅ Volver a la página principal</a>
+        </div>
+    </main>
 
-    <script>
-        const carrusel = document.querySelector(".carrusel-inner");
-        const items = document.querySelectorAll(".carrusel-item");
-        const totalItems = items.length;
-        let index = 0;
-        let autoSlide;
-
-        function showSlide(i) {
-            carrusel.style.transform = `translateY(-${i * 100}%)`;
-        }
-
-        function nextSlide() {
-            index = (index + 1) % totalItems;
-            showSlide(index);
-        }
-
-        function prevSlide() {
-            index = (index - 1 + totalItems) % totalItems;
-            showSlide(index);
-        }
-
-        // Botones
-        document.querySelector(".btn-up").addEventListener("click", () => {
-            prevSlide();
-            resetAuto();
-        });
-
-        document.querySelector(".btn-down").addEventListener("click", () => {
-            nextSlide();
-            resetAuto();
-        });
-
-        // Automático
-        function startAuto() {
-            autoSlide = setInterval(nextSlide, 4000); // cada 4 segundos
-        }
-
-        function resetAuto() {
-            clearInterval(autoSlide);
-            startAuto();
-        }
-
-        startAuto();
-    </script>
-
+    <footer>
+        <p>&copy; 2025 - Mi Escuela</p>
+    </footer>
 </body>
 </html>
