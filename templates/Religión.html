@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones - Escuela</title>
+    <!-- Cargar tu CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Estilos puntuales para el iframe */
+        .iframe-facebook {
+            width: 100%;
+            max-width: 500px;
+            height: 690px;
+            border: none;
+            overflow: hidden;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Publicaciones de nuestra comunidad</h1>
+    </header>
 
+    <main>
+        <div class="presentacion">
+            <p>En esta publicación de nuestro Facebook puedes ver la galería completa 👇</p>
+
+            <!-- 🔹 Iframe de la publicación -->
+            <iframe class="iframe-facebook"
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fposts%2Fpfbid02xWVQGJorkHCQcTohvsB5gF8aRfwSzLebGF9Dam5jW3FMUnTSigPZmZMAXCMac4CQl&show_text=true&width=500"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+        </div>
+
+        <!-- Botón para volver al inicio -->
+        <div class="volver">
+            <a href="{{ url_for('index') }}" class="btn-volver">⬅ Volver a la página principal</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+</html>
