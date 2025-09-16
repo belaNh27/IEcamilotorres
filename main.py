@@ -49,7 +49,7 @@ def smartedu():
 
 @app.route('/smartedu/religion')
 def smartedu_religion():
-    return render_template("smartedu_religion.html", titulo="Religión - SMART-EDU")
+    return render_template("religion.html", titulo="Religión - SMART-EDU")
     
 @app.route('/chatbot')
 def chatbot():
