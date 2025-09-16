@@ -41,6 +41,11 @@ def tec():
 @app.route('/feria')
 def feria():
     return render_template('feria.html', titulo="Feria Educativa")
+
+
+@app.route('/smartedu')
+def smartedu():
+    return render_template("smartedu.html", titulo="SMART-EDU - IE Camilo Torres")
     
 @app.route('/chatbot')
 def chatbot():
