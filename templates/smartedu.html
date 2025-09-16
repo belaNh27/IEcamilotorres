@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación - Escuela</title>
+    <!-- Cargar tu CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <h1>Materias</h1>
+  <div class="menu">
+    <a href="matematicas.html" class="btn">Matemáticas</a>
+    <a href="espanol.html" class="btn">Español</a>
+    <a href="quimica.html" class="btn">Química</a>
+    <a href="ciencias.html" class="btn">Ciencias Naturales</a>
+    <a href="filosofia.html" class="btn">Filosofía</a>
+    <a href="fisica.html" class="btn">Física</a>
+    <a href="ingles.html" class="btn">Inglés</a>
+    <a href="tecnologia.html" class="btn">Tecnología</a>
+    <a href="religion.html" class="btn">Religión</a>
+    <a href="edufisica.html" class="btn">Edu. Física</a>
+    <a href="artistica.html" class="btn">Artística</a>
+    <a href="etica.html" class="btn">Ética</a>
+    <a href="mas.html" class="btn">Más</a>
+  </div>
+
+        <div class="volver">
+            <a href="{{ url_for('index') }}" class="btn-volver">⬅ Volver a la página principal</a>
+        </div>
+    </main>
 
