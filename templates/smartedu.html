@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación - Escuela</title>
-    <!-- Cargar tu CSS principal -->
+    <title>{{ titulo }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ titulo }}</h1>
+    </header>
 
-  <h1>Materias</h1>
-  <div class="menu">
-    <a href="matematicas.html" class="btn">Matemáticas</a>
-    <a href="espanol.html" class="btn">Español</a>
-    <a href="quimica.html" class="btn">Química</a>
-    <a href="ciencias.html" class="btn">Ciencias Naturales</a>
-    <a href="filosofia.html" class="btn">Filosofía</a>
-    <a href="fisica.html" class="btn">Física</a>
-    <a href="ingles.html" class="btn">Inglés</a>
-    <a href="tecnologia.html" class="btn">Tecnología</a>
-    <a href="religion.html" class="btn">Religión</a>
-    <a href="edufisica.html" class="btn">Edu. Física</a>
-    <a href="artistica.html" class="btn">Artística</a>
-    <a href="etica.html" class="btn">Ética</a>
-    <a href="mas.html" class="btn">Más</a>
-  </div>
+    <main>
+        <!-- 🔹 Sección de Áreas -->
+        <section class="content-section">
+            <div class="container">
+                <h2>Áreas</h2>
+                <p>Selecciona un área de aprendizaje para explorar contenidos y recursos:</p>
 
-        <div class="volver">
+                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    
+                    <!-- Botón Religiòn -->
+                    <a href="{{ url_for('smartedu_religion') }}" 
+                       class="icfes-button" 
+                       style="display: inline-flex; max-width: 300px; margin: 0 auto; align-items: center; gap: 15px;">
+                        <i class="fas fa-church" style="font-size: 2em;"></i>
+                        <div>
+                            <strong>Religión</strong><br>
+                            <span>Reflexión y valores</span>
+                        </div>
+                    </a>
+
+                    <!-- Botón Matemáticas (ejemplo, aún no tiene ruta) -->
+                    <a href="#" 
+                       class="icfes-button" 
+                       style="display: inline-flex; max-width: 300px; margin: 0 auto; align-items: center; gap: 15px;">
+                        <i class="fas fa-square-root-alt" style="font-size: 2em;"></i>
+                        <div>
+                            <strong>Matemáticas</strong><br>
+                            <span>Resolver y aprender</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <div style="margin: 20px; text-align: center;">
             <a href="{{ url_for('index') }}" class="btn-volver">⬅ Volver a la página principal</a>
         </div>
     </main>
 
+    <footer>
+        <p>&copy; 2025 - IE Camilo Torres</p>
+    </footer>
+</body>
+</html>
