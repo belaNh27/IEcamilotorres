@@ -46,6 +46,10 @@ def feria():
 @app.route('/smartedu')
 def smartedu():
     return render_template("smartedu.html", titulo="SMART-EDU - IE Camilo Torres")
+
+@app.route('/smartedu/religion')
+def smartedu_religion():
+    return render_template("smartedu_religion.html", titulo="Religión - SMART-EDU")
     
 @app.route('/chatbot')
 def chatbot():
