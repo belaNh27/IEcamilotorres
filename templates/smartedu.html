@@ -6,38 +6,6 @@
     <title>{{ titulo }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        .icfes-button {
-            display: inline-flex;
-            max-width: 300px;
-            margin: 0 auto;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            background: #8DE0A5;
-            color: #FFD700;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .icfes-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .btn-volver {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #006400;
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -53,11 +21,11 @@
 
                 <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
                     <!-- Botón Religión -->
-                    <a href="{{ url_for('smartedu_religion') }}" class="icfes-button">
-                        <i class="fas fa-church" style="font-size: 2em;"></i>
+                    <a href="{{ url_for('smartedu_religion') }}" class="icfes-button" style="transition: none;">
+                        <i class="fas fa-church" style="font-size: 3em; background: linear-gradient(135deg, #00ff44, #009456); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                         <div>
                             <strong>Religión</strong><br>
-                            <span>Educación Relgiosa Escolar</span>
+                            <span>Reflexión y valores</span>
                         </div>
                     </a>
                 </div>
@@ -72,5 +40,8 @@
     <footer>
         <p>&copy; 2025 - IE Camilo Torres</p>
     </footer>
+</body>
+</html>
+
 </body>
 </html>
