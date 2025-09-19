@@ -29,7 +29,7 @@
                 <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">Preparación ICFES</a></li>
                 <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
                 <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
-                <li><a href="{{ url_for('tec') }}" class="{% if request.path == url_for('tec') %}current{% endif %}">Herramientas</a></li>
+
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Abrir menú">
@@ -76,7 +76,10 @@
         <p>SMART-EDU</p>
         <div style="margin-top: 30px;">
             <a href="{{ url_for('smartedu') }}" class="icfes-button" style="display: inline-flex; max-width: 400px; margin: 0 auto; align-items: center; text-decoration: none;">
-                <img src="{{ url_for('static', filename='images/smartedu.png') }}" alt="SmartEdu" style="width: 80px; height: auto; margin-right: 15px;">
+                <img src="{{ url_for('static', filename='img/smartedu.png') }}" 
+         alt="SmartEdu" 
+         style="width: 456px; height: 256px; max-width: 100%; border-radius: 12px; margin: 0 auto; display: block;">
+
                 <div>
                     <strong>Aprendamos</strong><br>
                     <span>¡Un espacio para los camilistas!</span>
