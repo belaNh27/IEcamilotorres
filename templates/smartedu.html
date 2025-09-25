@@ -13,34 +13,161 @@
     </header>
 
     <main>
-        <!-- 🔹 Sección de Áreas -->
+        <!-- Sección de Áreas -->
         <section class="content-section">
             <div class="container">
                 <h2>Áreas</h2>
                 <p>Selecciona un área de aprendizaje para explorar contenidos y recursos:</p>
 
-                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                    <!-- Botón Religión -->
-                    <a href="{{ url_for('smartedu_religion') }}" class="icfes-button" style="transition: none;">
-                        <i class="fas fa-church" style="font-size: 3em; background: linear-gradient(135deg, #00ff44, #009456); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <div class="areas-container">
+                    <!-- Religión -->
+                    <a href="{{ url_for('smartedu_religion') }}" class="icfes-button">
+                        <i class="fas fa-church"></i>
                         <div>
                             <strong>Religión</strong><br>
                             <span>Reflexión y valores</span>
                         </div>
                     </a>
-                </div>
-                <a href="{{ url_for('tec') }}" class="icfes-button" style="transition: none;">
-                        <i class="fas fa-church" style="font-size: 3em; background: linear-gradient(135deg, #00ff44, #009456); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+
+                    <!-- Herramientas -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-tools"></i>
                         <div>
                             <strong>Herramientas</strong><br>
-                            <span>¡Las Mejores herramientas tecnológicas!</span>
+                            <span>¡Las mejores herramientas tecnológicas!</span>
+                        </div>
+                    </a>
+
+                    <!-- Matemáticas -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-square-root-alt"></i>
+                        <div>
+                            <strong>Matemáticas</strong><br>
+                            <span>Números, álgebra y más</span>
+                        </div>
+                    </a>
+
+                    <!-- Español -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <strong>Español</strong><br>
+                            <span>Lengua y literatura</span>
+                        </div>
+                    </a>
+
+                    <!-- Sociales -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-globe-americas"></i>
+                        <div>
+                            <strong>Sociales</strong><br>
+                            <span>Historia, geografía y cultura</span>
+                        </div>
+                    </a>
+
+                    <!-- Ciencias Naturales (General) -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <strong>Ciencias Naturales</strong><br>
+                            <span>Explora la naturaleza</span>
+                        </div>
+                    </a>
+
+                    <!-- Biología -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-dna"></i>
+                        <div>
+                            <strong>Biología</strong><br>
+                            <span>Vida y organismos</span>
+                        </div>
+                    </a>
+
+                    <!-- Física -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-atom"></i>
+                        <div>
+                            <strong>Física</strong><br>
+                            <span>Leyes y fenómenos</span>
+                        </div>
+                    </a>
+
+                    <!-- Química -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-vials"></i>
+                        <div>
+                            <strong>Química</strong><br>
+                            <span>Mundo de los elementos</span>
+                        </div>
+                    </a>
+
+                    <!-- Inglés -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <strong>Inglés</strong><br>
+                            <span>Aprende el idioma global</span>
+                        </div>
+                    </a>
+
+                    <!-- Tecnología -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-laptop"></i>
+                        <div>
+                            <strong>Tecnología</strong><br>
+                            <span>Computación y digitalización</span>
+                        </div>
+                    </a>
+
+                    <!-- Filosofía -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                            <strong>Filosofía</strong><br>
+                            <span>Ideas y pensamiento crítico</span>
+                        </div>
+                    </a>
+
+                    <!-- Artística -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-paint-brush"></i>
+                        <div>
+                            <strong>Artística</strong><br>
+                            <span>Expresión y creación</span>
+                        </div>
+                    </a>
+
+                    <!-- Educación Física -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-running"></i>
+                        <div>
+                            <strong>Edu. Física</strong><br>
+                            <span>Movimiento y salud</span>
+                        </div>
+                    </a>
+
+                    <!-- Ética -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-balance-scale"></i>
+                        <div>
+                            <strong>Ética</strong><br>
+                            <span>Valores y conducta</span>
+                        </div>
+                    </a>
+
+                    <!-- Más -->
+                    <a href="{{ url_for('tec') }}" class="icfes-button">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <div>
+                            <strong>Más</strong><br>
+                            <span>Otros recursos</span>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <div style="margin: 20px; text-align: center;">
+        <div class="volver-wrapper">
             <a href="{{ url_for('index') }}" class="btn-volver">⬅ Volver a la página principal</a>
         </div>
     </main>
