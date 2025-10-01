@@ -50,7 +50,12 @@ def smartedu():
 @app.route('/smartedu/religion')
 def smartedu_religion():
     return render_template("religion.html", titulo="Religión - SMART-EDU")
-    
+
+
+# Ruta del festival gastronómico
+@app.route("/festival-gastronomico")
+def festival():
+    return render_template("festival.html")
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html', titulo="Chatbot - IE Camilo Torres")
