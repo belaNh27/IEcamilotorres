@@ -37,39 +37,44 @@
         </button>
     </header>
 
-    <main>
-        <section class="carousel-container">
-            <div class="carousel">
-                <div class="slide active">
-                    <img src="{{ url_for('static', filename='images/escuela1.jpg') }}" alt="Escuela 1">
-                    <div class="caption">Bienvenidos a IE Camilo Torres</div>
-                </div>
-                <div class="slide">
+ <main>
+    <section class="carousel-container">
+        <div class="carousel">
+
+            <div class="slide active">
+                <img src="{{ url_for('static', filename='images/escuela1.jpg') }}" alt="Escuela 1">
+                <div class="caption">Bienvenidos a IE Camilo Torres</div>
+            </div>
+
+            <div class="slide">
+                <a href="https://ecomitted.onrender.com/" target="_blank">
                     <img src="{{ url_for('static', filename='images/escuela2.jpg') }}" alt="Escuela 2">
                     <div class="caption">Formación integral con valores</div>
-                </div>
-                <div class="slide">
-                    <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
-                    <div class="caption">Innovación en la enseñanza</div>
-                </div>
-             <div class="slide">
-                     <a href="{{ url_for('feria') }}">
-                    <img src="{{ url_for('static', filename='images/Escuela4.png') }}" alt="Escuela 4">
-                    <div class="caption"> ¡Dale click y conoce más!</div>
-                </div>
-        
-                <a class="prev">&#10094;</a>
-                <a class="next">&#10095;</a>
-
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+                </a>
             </div>
-        </section>
 
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
+                <div class="caption">Innovación en la enseñanza</div>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/Escuela4.png') }}" alt="Escuela 4">
+                <div class="caption">¡Dale click y conoce más!</div>
+            </div>
+
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+</main>
 <section class="content-section">
     <div class="container">
         <h2></h2>
