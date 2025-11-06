@@ -9,9 +9,9 @@
 </head>
 <body>
 
- <header class="main-header">
+<header class="main-header">
     <div class="header-left">
-        <a href="{{ url_for('index') }}" class="logo-link">    
+        <a href="{{ url_for('index') }}" class="logo-link">
             <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
         </a>
     </div>
@@ -27,165 +27,158 @@
     </nav>
 </header>
 
-    <main>
-        <!-- Sección de Áreas -->
-        <section class="content-section">
-            <div class="container">
-                <h2>Áreas</h2>
-                <p>Selecciona un área de aprendizaje para explorar contenidos y recursos:</p>
+<main>
+    <!-- Sección de Áreas -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Áreas de Aprendizaje</h2>
+            <p>Selecciona un área para explorar recursos interactivos, simuladores, y actividades diseñadas para tu aprendizaje.</p>
 
-                <div class="areas-container">
-                    <!-- Religión -->
-                    <a href="{{ url_for('smartedu_religion') }}" class="icfes-button">
-                        <i class="fas fa-church"></i>
-                        <div>
-                            <strong>Religión</strong><br>
-                            <span>Reflexión y valores</span>
-                        </div>
-                    </a>
+            <div class="areas-container">
+                <!-- Matemáticas -->
+                <a href="{{ url_for('smartedu_matematicas') }}" class="icfes-button">
+                    <i class="fas fa-square-root-alt"></i>
+                    <div>
+                        <strong>Matemáticas</strong><br>
+                        <span>GeoGebra, álgebra, y más</span>
+                    </div>
+                </a>
 
-                    <!-- Herramientas -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-tools"></i>
-                        <div>
-                            <strong>Herramientas</strong><br>
-                            <span>¡Las mejores herramientas tecnológicas!</span>
-                        </div>
-                    </a>
+                <!-- Español -->
+                <a href="{{ url_for('smartedu_espanol') }}" class="icfes-button">
+                    <i class="fas fa-book"></i>
+                    <div>
+                        <strong>Español</strong><br>
+                        <span>Lengua, lectura y acertijos</span>
+                    </div>
+                </a>
 
-                    <!-- Matemáticas -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-square-root-alt"></i>
-                        <div>
-                            <strong>Matemáticas</strong><br>
-                            <span>Números, álgebra y más</span>
-                        </div>
-                    </a>
+                <!-- Inglés -->
+                <a href="{{ url_for('smartedu_ingles') }}" class="icfes-button">
+                    <i class="fas fa-language"></i>
+                    <div>
+                        <strong>Inglés</strong><br>
+                        <span>Juegos, conectores y práctica</span>
+                    </div>
+                </a>
 
-                    <!-- Español -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-book"></i>
-                        <div>
-                            <strong>Español</strong><br>
-                            <span>Lengua y literatura</span>
-                        </div>
-                    </a>
+                <!-- Sociales -->
+                <a href="{{ url_for('smartedu_sociales') }}" class="icfes-button">
+                    <i class="fas fa-globe-americas"></i>
+                    <div>
+                        <strong>Sociales</strong><br>
+                        <span>Líneas del tiempo e historia</span>
+                    </div>
+                </a>
 
-                    <!-- Sociales -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-globe-americas"></i>
-                        <div>
-                            <strong>Sociales</strong><br>
-                            <span>Historia, geografía y cultura</span>
-                        </div>
-                    </a>
+                <!-- Naturales -->
+                <a href="{{ url_for('smartedu_naturales') }}" class="icfes-button">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <strong>Ciencias Naturales</strong><br>
+                        <span>Simuladores de mezclas y cuerpo humano</span>
+                    </div>
+                </a>
 
-                    <!-- Ciencias Naturales (General) -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-leaf"></i>
-                        <div>
-                            <strong>Ciencias Naturales</strong><br>
-                            <span>Explora la naturaleza</span>
-                        </div>
-                    </a>
+                <!-- Biología -->
+                <a href="{{ url_for('smartedu_biologia') }}" class="icfes-button">
+                    <i class="fas fa-dna"></i>
+                    <div>
+                        <strong>Biología</strong><br>
+                        <span>Células y organismos</span>
+                    </div>
+                </a>
 
-                    <!-- Biología -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-dna"></i>
-                        <div>
-                            <strong>Biología</strong><br>
-                            <span>Vida y organismos</span>
-                        </div>
-                    </a>
+                <!-- Física -->
+                <a href="{{ url_for('smartedu_fisica') }}" class="icfes-button">
+                    <i class="fas fa-atom"></i>
+                    <div>
+                        <strong>Física</strong><br>
+                        <span>Leyes, movimiento y energía</span>
+                    </div>
+                </a>
 
-                    <!-- Física -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-atom"></i>
-                        <div>
-                            <strong>Física</strong><br>
-                            <span>Leyes y fenómenos</span>
-                        </div>
-                    </a>
+                <!-- Química -->
+                <a href="{{ url_for('smartedu_quimica') }}" class="icfes-button">
+                    <i class="fas fa-vials"></i>
+                    <div>
+                        <strong>Química</strong><br>
+                        <span>Reacciones y experimentos</span>
+                    </div>
+                </a>
 
-                    <!-- Química -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-vials"></i>
-                        <div>
-                            <strong>Química</strong><br>
-                            <span>Mundo de los elementos</span>
-                        </div>
-                    </a>
+                <!-- Filosofía -->
+                <a href="{{ url_for('smartedu_filosofia') }}" class="icfes-button">
+                    <i class="fas fa-book-open"></i>
+                    <div>
+                        <strong>Filosofía</strong><br>
+                        <span>Grandes pensadores y conceptos</span>
+                    </div>
+                </a>
 
-                    <!-- Inglés -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-language"></i>
-                        <div>
-                            <strong>Inglés</strong><br>
-                            <span>Aprende el idioma global</span>
-                        </div>
-                    </a>
+                <!-- Ética -->
+                <a href="{{ url_for('smartedu_etica') }}" class="icfes-button">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <strong>Ética</strong><br>
+                        <span>Valores y habilidades blandas</span>
+                    </div>
+                </a>
 
-                    <!-- Tecnología -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-laptop"></i>
-                        <div>
-                            <strong>Tecnología</strong><br>
-                            <span>Computación y digitalización</span>
-                        </div>
-                    </a>
+                <!-- Religión -->
+                <a href="{{ url_for('smartedu_religion') }}" class="icfes-button">
+                    <i class="fas fa-church"></i>
+                    <div>
+                        <strong>Religión</strong><br>
+                        <span>Reflexión, fe y versículos</span>
+                    </div>
+                </a>
 
-                    <!-- Filosofía -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-book-open"></i>
-                        <div>
-                            <strong>Filosofía</strong><br>
-                            <span>Ideas y pensamiento crítico</span>
-                        </div>
-                    </a>
+                <!-- Tecnología -->
+                <a href="{{ url_for('smartedu_tecnologia') }}" class="icfes-button">
+                    <i class="fas fa-laptop"></i>
+                    <div>
+                        <strong>Tecnología</strong><br>
+                        <span>Programación y desarrollo web</span>
+                    </div>
+                </a>
 
-                    <!-- Artística -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-paint-brush"></i>
-                        <div>
-                            <strong>Artística</strong><br>
-                            <span>Expresión y creación</span>
-                        </div>
-                    </a>
+                <!-- Educación Física -->
+                <a href="{{ url_for('smartedu_educacion_fisica') }}" class="icfes-button">
+                    <i class="fas fa-running"></i>
+                    <div>
+                        <strong>Educación Física</strong><br>
+                        <span>Deporte y bienestar</span>
+                    </div>
+                </a>
 
-                    <!-- Educación Física -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-running"></i>
-                        <div>
-                            <strong>Edu. Física</strong><br>
-                            <span>Movimiento y salud</span>
-                        </div>
-                    </a>
+                <!-- Artística -->
+                <a href="{{ url_for('smartedu_artistica') }}" class="icfes-button">
+                    <i class="fas fa-paint-brush"></i>
+                    <div>
+                        <strong>Artística</strong><br>
+                        <span>Arte, cultura y expresión</span>
+                    </div>
+                </a>
 
-                    <!-- Ética -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-balance-scale"></i>
-                        <div>
-                            <strong>Ética</strong><br>
-                            <span>Valores y conducta</span>
-                        </div>
-                    </a>
-
-                    <!-- Más -->
-                    <a href="{{ url_for('tec') }}" class="icfes-button">
-                        <i class="fas fa-ellipsis-h"></i>
-                        <div>
-                            <strong>Más</strong><br>
-                            <span>Otros recursos</span>
-                        </div>
-                    </a>
-                </div>
+                <!-- Herramientas de IA -->
+                <a href="{{ url_for('smartedu_herramientas') }}" class="icfes-button">
+                    <i class="fas fa-tools"></i>
+                    <div>
+                        <strong>Herramientas</strong><br>
+                        <span>Explora las mejores apps de IA</span>
+                    </div>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
+</main>
 
+<footer class="main-footer">
+    <p>&copy; 2025 IE Camilo Torres • Proyecto SmartEdu • San Pedro de Urabá</p>
+</footer>
 
-    </footer>
 </body>
 </html>
-
-</body>
-</html>
+                
+ 
