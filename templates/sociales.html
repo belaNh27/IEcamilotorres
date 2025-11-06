@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sociales - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-sociales">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🌍 Ciencias Sociales</h1>
+            <p>Viaja por la historia, geografía y cultura de Colombia y el mundo</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Línea de Tiempo: Eventos Importantes de Colombia</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1810 - Independencia</h3>
+                        <p>El 20 de julio comienza el proceso de independencia de Colombia con el Grito de Independencia en Bogotá.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1819 - Batalla de Boyacá</h3>
+                        <p>Victoria definitiva de las tropas independentistas lideradas por Simón Bolívar.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1886 - Constitución</h3>
+                        <p>Se promulga la Constitución que rigió Colombia por más de 100 años.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1991 - Nueva Constitución</h3>
+                        <p>Se establece la Constitución actual, reconociendo a Colombia como un estado social de derecho.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2016 - Acuerdo de Paz</h3>
+                        <p>Se firma el acuerdo de paz con las FARC, marcando un hito en la historia del país.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Mapa de Colombia</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8191605.987744814!2d-78.50631889999999!3d4.570868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1ses!2sco!4v1234567890" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Líderes Históricos</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>⚔️ Simón Bolívar</h3>
+                        <p>El Libertador. Líder militar y político que liberó varios países sudamericanos del dominio español.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📜 Francisco de Paula Santander</h3>
+                        <p>El Hombre de las Leyes. Organizador de la república y vicepresidente de la Gran Colombia.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>👩‍⚖️ María Cano</h3>
+                        <p>Líder sindical y de los derechos de los trabajadores en Colombia.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🕊️ Jorge Eliécer Gaitán</h3>
+                        <p>Líder político popular cuyo asesinato en 1948 marcó la historia colombiana.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Regiones de Colombia</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🏔️ Región Andina</h3>
+                        <p>La más poblada. Incluye Bogotá, Medellín y Cali. Zona montañosa con clima variado.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌊 Región Caribe</h3>
+                        <p>Costa norte del país. Incluye Barranquilla, Cartagena y Santa Marta. Clima cálido.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌴 Región Pacífica</h3>
+                        <p>Costa oeste. Una de las zonas con mayor biodiversidad y lluvia del mundo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌳 Región Amazónica</h3>
+                        <p>Selva tropical. Parte del pulmón del mundo con enorme riqueza natural.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🦌 Región Orinoquía</h3>
+                        <p>Llanos orientales. Sabanas con ganadería y cultivos extensivos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏝️ Región Insular</h3>
+                        <p>Islas San Andrés, Providencia y otras. Patrimonio de la humanidad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>Colombia es el único país de Sudamérica con costas en dos océanos: el Pacífico y el Atlántico (Mar Caribe). Además, es el segundo país más biodiverso del mundo, solo superado por Brasil que es mucho más grande.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

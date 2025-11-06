@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artística - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-artistica">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🎨 Educación Artística</h1>
+            <p>Descubre el arte, la música y la expresión creativa</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Disciplinas Artísticas</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🎨 Pintura</h3>
+                        <p>Expresión visual a través de colores, formas y texturas. Desde el realismo hasta el arte abstracto.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎭 Teatro</h3>
+                        <p>Arte dramático que combina actuación, escenografía y narrativa para contar historias.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎵 Música</h3>
+                        <p>Composición y ejecución de sonidos armoniosos. Instrumento universal de expresión.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💃 Danza</h3>
+                        <p>Expresión corporal a través del movimiento coordinado con música y ritmo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🗿 Escultura</h3>
+                        <p>Arte tridimensional que moldea materiales como arcilla, piedra o metal.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📷 Fotografía</h3>
+                        <p>Captura de momentos y expresión artística a través de la lente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Artistas Colombianos Destacados</h2>
+                <div class="masonry-grid">
+                    <div class="masonry-item">
+                        <h3>🎨 Fernando Botero</h3>
+                        <p>Pintor y escultor reconocido mundialmente por su estilo único de figuras voluminosas. Sus obras están en museos de todo el mundo.</p>
+                    </div>
+                    <div class="masonry-item">
+                        <h3>🎭 Fanny Mikey</h3>
+                        <p>Actriz y gestora cultural. Fundadora del Festival Iberoamericano de Teatro de Bogotá.</p>
+                    </div>
+                    <div class="masonry-item">
+                        <h3>🎵 Shakira</h3>
+                        <p>Cantante y compositora barranquillera con reconocimiento internacional. Ganadora de múltiples Grammy.</p>
+                    </div>
+                    <div class="masonry-item">
+                        <h3>🖌️ Débora Arango</h3>
+                        <p>Pintora expresionista que desafió convenciones sociales con su arte provocador y revolucionario.</p>
+                    </div>
+                    <div class="masonry-item">
+                        <h3>🎺 Lucho Bermúdez</h3>
+                        <p>Músico y compositor, creador de porros y cumbias que son patrimonio cultural colombiano.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Historia del Arte</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/W8l0Kv3fkPY" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Círculo Cromático</h2>
+                <div class="info-card">
+                    <h3>🎨 Teoría del Color</h3>
+                    <p><strong>Colores primarios:</strong> Rojo, Azul, Amarillo<br>
+                    <strong>Colores secundarios:</strong> Verde, Naranja, Violeta<br>
+                    <strong>Colores complementarios:</strong> Colores opuestos en el círculo que crean contraste</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Museos Virtuales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🏛️ Museo del Louvre</h3>
+                        <p>Explora obras maestras como La Mona Lisa en París.</p>
+                        <a href="https://www.louvre.fr/en/visites-en-ligne" target="_blank" class="btn">Visitar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🖼️ Museo del Prado</h3>
+                        <p>Arte español con obras de Velázquez y Goya.</p>
+                        <a href="https://www.museodelprado.es/" target="_blank" class="btn">Explorar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🇨🇴 Museo Botero</h3>
+                        <p>Colección de Fernando Botero en Bogotá, Colombia.</p>
+                        <a href="https://www.banrepcultural.org/bogota/museo-botero" target="_blank" class="btn">Visitar</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "El arte es la mentira que nos permite comprender la verdad."
+                <span class="author">- Pablo Picasso</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>La pintura "La noche estrellada" de Vincent van Gogh fue creada mientras estaba en un hospital psiquiátrico. Hoy es una de las obras más famosas del mundo y se ha convertido en un ícono de la cultura pop.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

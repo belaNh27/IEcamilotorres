@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-biologia">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🧬 Biología</h1>
+            <p>Explora la vida desde la célula hasta los ecosistemas</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">La Célula</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🔬 Célula Animal</h3>
+                        <p>Membrana plasmática, núcleo, mitocondrias, ribosomas, retículo endoplasmático, aparato de Golgi, lisosomas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌱 Célula Vegetal</h3>
+                        <p>Además de los orgánulos de la célula animal, tiene pared celular, cloroplastos y vacuola central grande.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Estructura de la Célula</h2>
+                <div class="info-card" style="margin-bottom: 20px;">
+                    <h3>🔬 Componentes Celulares</h3>
+                    <div class="cards-grid">
+                        <div class="info-card">
+                            <h3>Núcleo</h3>
+                            <p>Centro de control que contiene el ADN y dirige las funciones celulares.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Mitocondrias</h3>
+                            <p>Centrales energéticas que producen ATP para la célula.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Ribosomas</h3>
+                            <p>Sintetizan proteínas siguiendo las instrucciones del ARN.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Membrana Plasmática</h3>
+                            <p>Barrera selectiva que controla el paso de sustancias.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">ADN y Herencia Genética</h2>
+                <div class="info-card" style="margin-bottom: 20px;">
+                    <h3>🧬 Estructura del ADN</h3>
+                    <p>El ADN (ácido desoxirribonucleico) es una molécula de doble hélice que contiene toda la información genética. Está formado por nucleótidos con cuatro bases: Adenina (A), Timina (T), Citosina (C) y Guanina (G).</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>👨‍👩‍👧 Herencia Mendeliana</h3>
+                        <p>Leyes de Mendel sobre la transmisión de caracteres hereditarios de padres a hijos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🔄 Replicación del ADN</h3>
+                        <p>Proceso por el cual el ADN se duplica antes de la división celular.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🧪 Mutaciones</h3>
+                        <p>Cambios en la secuencia del ADN que pueden ser heredados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Ecosistemas y Biodiversidad</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🌳 Ecosistemas Terrestres</h3>
+                        <p>Bosques, selvas, desiertos, tundra, sabanas. Cada uno con flora y fauna adaptadas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌊 Ecosistemas Acuáticos</h3>
+                        <p>Océanos, ríos, lagos, humedales. El agua cubre el 71% de la Tierra.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>♻️ Cadenas Tróficas</h3>
+                        <p>Productores → Consumidores → Descomponedores. Flujo de energía en el ecosistema.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌍 Biodiversidad</h3>
+                        <p>Colombia es uno de los 17 países megadiversos del mundo con más de 56,000 especies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Quiz: Genética Básica</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        ¿Cuántos cromosomas tiene una célula humana normal?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-bio1', '46 (23 pares)', '46 (23 pares)')">
+                            46 (23 pares)
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-bio1', '23', '46 (23 pares)')">
+                            23
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-bio1', '48', '46 (23 pares)')">
+                            48
+                        </div>
+                    </div>
+                    <div id="result-q-bio1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Biotecnología</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/9wwtkvvZ9Fs" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "Nada en biología tiene sentido si no es a la luz de la evolución."
+                <span class="author">- Theodosius Dobzhansky</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>Compartimos el 98.8% de nuestro ADN con los chimpancés. Además, el 60% de nuestros genes son similares a los de una mosca de la fruta, y el 50% son similares a los de un plátano. ¡Todos los seres vivos estamos conectados!</p>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🔬 Khan Academy Biología</h3>
+                        <p>Videos y ejercicios sobre biología y genética.</p>
+                        <a href="https://es.khanacademy.org/science/biology" target="_blank" class="btn">Explorar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🧬 PhET Biología</h3>
+                        <p>Simulaciones interactivas de procesos biológicos.</p>
+                        <a href="https://phet.colorado.edu/es/simulations/filter?subjects=biology&type=html" target="_blank" class="btn">Visitar</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

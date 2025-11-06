@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-fisica">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>⚡ Física</h1>
+            <p>Comprende las leyes fundamentales que rigen el universo</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Simulador PhET: Movimiento</h2>
+                <div class="embed-container">
+                    <iframe src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_es.html" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Leyes Fundamentales de la Física</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🍎 Leyes de Newton</h3>
+                        <p><strong>1ª:</strong> Inercia - Un objeto en reposo permanece en reposo.<br>
+                        <strong>2ª:</strong> F = ma - Fuerza es masa por aceleración.<br>
+                        <strong>3ª:</strong> Acción y reacción - Fuerzas iguales y opuestas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Ley de Conservación de la Energía</h3>
+                        <p>La energía no se crea ni se destruye, solo se transforma de una forma a otra.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌊 Principio de Arquímedes</h3>
+                        <p>Un cuerpo sumergido experimenta un empuje hacia arriba igual al peso del fluido desplazado.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💡 Ley de Ohm</h3>
+                        <p>V = I × R - Voltaje es igual a corriente por resistencia en circuitos eléctricos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Simulador: Ondas</h2>
+                <div class="embed-container">
+                    <iframe src="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_es.html" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Física y el Universo</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/ohz8_0HdGpE" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "La física es como el sexo: seguro que da algún resultado práctico, pero no es por eso por lo que la hacemos."
+                <span class="author">- Richard Feynman</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>La luz viaja a 299,792,458 metros por segundo en el vacío. A esa velocidad, ¡podrías dar la vuelta a la Tierra 7.5 veces en un solo segundo! Además, si pudieras viajar a la velocidad de la luz, el tiempo se detendría para ti según la teoría de la relatividad de Einstein.</p>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🔬 PhET Simulaciones</h3>
+                        <p>Laboratorios virtuales de física interactivos.</p>
+                        <a href="https://phet.colorado.edu/es/simulations/filter?subjects=physics&type=html" target="_blank" class="btn">Explorar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>📚 Khan Academy Física</h3>
+                        <p>Videos y ejercicios de todos los temas de física.</p>
+                        <a href="https://es.khanacademy.org/science/physics" target="_blank" class="btn">Aprender</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

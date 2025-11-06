@@ -3,62 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Religión - SMART-EDU | IE Camilo Torres</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Religión - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
-<body>
-
-    <!-- Encabezado -->
-    <header class="header">
-        <div class="container">
-            <h1>Área de Religión</h1>
+<body class="materia-religion">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>✝️ Religión</h1>
+            <p>Reflexiona sobre valores espirituales y enseñanzas de fe</p>
         </div>
-    </header>
 
-    <!-- Contenido -->
-    <main>
-        <section class="content-section">
-            <div class="container">
-                <p>
-                    En nuestra institución educativa seguimos caminando juntos con la convicción de que la fe y los valores
-                    también son parte fundamental de nuestra formación. 🙏✨ Durante este mes especial, hemos reflexionado
-                    sobre la importancia de convivir con respeto, amor y esperanza, recordando que cada gesto de solidaridad
-                    fortalece nuestra comunidad camilista. 💚
-                </p>
-                <p>
-                    A través del área de Religión, aprendemos que convivir en paz no es solo un compromiso escolar,
-                    sino una manera de vivir la vida que Dios nos regala cada día. Inspirados en la Palabra:
-                    <em>“Amados, amémonos unos a otros, porque el amor es de Dios”</em> (1 Juan 4:7),
-                    reafirmamos que cada acción llena de cariño y empatía construye un mejor futuro. 🌱💖
-                </p>
-                <p>
-                    Con este espíritu, compartimos con alegría la siguiente publicación, que refleja cómo desde la fe
-                    y los valores seguimos sembrando unión, esperanza y convivencia en nuestra institución. 🌍🙌
-                </p>
-
-                <!-- Publicación de Facebook -->
-                <div style="margin: 30px auto; max-width: 500px; text-align: center;">
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fposts%2Fpfbid02xWVQGJorkHCQcTohvsB5gF8aRfwSzLebGF9Dam5jW3FMUnTSigPZmZMAXCMac4CQl&show_text=true&width=500" 
-                        width="500" 
-                        height="690" 
-                        style="border:none;overflow:hidden;max-width:100%;" 
-                        scrolling="no" 
-                        frameborder="0" 
-                        allowfullscreen="true" 
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Versículos Destacados</h2>
+                <div class="cards-grid">
+                    <div class="info-card" style="background: linear-gradient(135deg, #f8b500 0%, #fceabb 100%);">
+                        <h3>💛 Amor y Compasión</h3>
+                        <p><em>"Ama a tu prójimo como a ti mismo."</em><br>- Mateo 22:39</p>
+                    </div>
+                    <div class="info-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <h3>🕊️ Paz</h3>
+                        <p><em>"La paz os dejo, mi paz os doy."</em><br>- Juan 14:27</p>
+                    </div>
+                    <div class="info-card" style="background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);">
+                        <h3>🌟 Esperanza</h3>
+                        <p><em>"Todo lo puedo en Cristo que me fortalece."</em><br>- Filipenses 4:13</p>
+                    </div>
+                    <div class="info-card" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+                        <h3>🙏 Fe</h3>
+                        <p><em>"La fe es la certeza de lo que se espera, la convicción de lo que no se ve."</em><br>- Hebreos 11:1</p>
+                    </div>
                 </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Reflexión del Día</h2>
+                <div class="quote-box">
+                    <span class="rotating-text">La educación es el arma más poderosa que puedes usar para cambiar el mundo.</span>
+                    <span class="author">- Frase Inspiradora</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Los 10 Mandamientos</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1. Amarás a Dios sobre todas las cosas</h3>
+                        <p>Reconocer a Dios como lo más importante en nuestra vida.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2. No tomarás el nombre de Dios en vano</h3>
+                        <p>Respetar el nombre de Dios con reverencia.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>3. Santificarás las fiestas</h3>
+                        <p>Dedicar tiempo para la oración y la reflexión espiritual.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>4. Honrarás a tu padre y a tu madre</h3>
+                        <p>Respetar y valorar a nuestros padres y mayores.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>5. No matarás</h3>
+                        <p>Respetar la vida y la dignidad de todas las personas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Valores Cristianos</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>❤️ Amor</h3>
+                        <p>El amor es el mandamiento más grande. Amar a Dios y al prójimo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🤝 Solidaridad</h3>
+                        <p>Ayudar a los demás, especialmente a los más necesitados.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✨ Honestidad</h3>
+                        <p>Vivir con verdad e integridad en todas nuestras acciones.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🙏 Gratitud</h3>
+                        <p>Agradecer por las bendiciones recibidas cada día.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🕊️ Perdón</h3>
+                        <p>Perdonar a quienes nos ofenden, como Dios nos perdona.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💫 Humildad</h3>
+                        <p>Reconocer nuestras limitaciones y servir a los demás.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Reflexión Espiritual</h2>
+                <div class="info-card" style="padding: 30px;">
+                    <h3>🙏 Momento de Reflexión</h3>
+                    <p style="line-height: 1.8;">
+                        "Señor, concédeme la serenidad para aceptar las cosas que no puedo cambiar, 
+                        el valor para cambiar las cosas que sí puedo, y la sabiduría para reconocer 
+                        la diferencia."<br><br>
+                        
+                        En nuestro camino diario, encontramos desafíos que nos invitan a crecer 
+                        espiritualmente. Cada momento es una oportunidad para practicar la bondad, 
+                        la compasión y el amor hacia los demás.
+                    </p>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>La Biblia es el libro más traducido del mundo, disponible en más de 3,000 idiomas. Además, es el libro más vendido de todos los tiempos, con miles de millones de copias distribuidas en todo el mundo.</p>
             </div>
-        </section>
-    </main>
-
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 IE Camilo Torres - SMART-EDU</p>
         </div>
-    </footer>
+    </div>
 
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

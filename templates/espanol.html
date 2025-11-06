@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Español - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-espanol">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>📚 Español</h1>
+            <p>Mejora tu comprensión lectora, gramática y expresión escrita</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Reto del Día</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        Corrige la siguiente frase:<br>
+                        "Ayer fuí al parque y ví muchos pajaros volando"
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('reto1', 'fui, vi, pájaros', 'fui, vi, pájaros')">
+                            Errores: fui (sin tilde), vi (sin tilde), pájaros (con tilde)
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('reto1', 'correcto', 'fui, vi, pájaros')">
+                            La frase está correcta
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('reto1', 'solo pájaros', 'fui, vi, pájaros')">
+                            Solo falta tilde en pájaros
+                        </div>
+                    </div>
+                    <div id="result-reto1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Vocabulario Literario</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📖 Sustantivo</h3>
+                        <p>Palabra que nombra personas, animales, cosas o ideas. Ejemplo: casa, perro, felicidad.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎯 Adjetivo</h3>
+                        <p>Describe o califica al sustantivo. Ejemplo: grande, azul, rápido.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Verbo</h3>
+                        <p>Expresa acción, estado o proceso. Ejemplo: correr, ser, pensar.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📝 Gramática</h3>
+                        <p>Conjunto de reglas que rigen el uso correcto del idioma.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Galería Literaria Colombiana</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📖 Gabriel García Márquez</h3>
+                        <p>Premio Nobel de Literatura 1982. Autor de "Cien años de soledad", obra cumbre del realismo mágico.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✍️ Rafael Pombo</h3>
+                        <p>Poeta colombiano famoso por sus fábulas infantiles como "La pobre viejecita" y "Simón el bobito".</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📚 Laura Restrepo</h3>
+                        <p>Escritora contemporánea ganadora del Premio Alfaguara con "Delirio".</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🖋️ Álvaro Mutis</h3>
+                        <p>Poeta y novelista, autor de "La nieve del almirante" y creador del personaje Maqroll el Gaviero.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Poema: "El Renacuajo Paseador"</h2>
+                <div class="info-card" style="padding: 30px;">
+                    <h3>📜 Rafael Pombo</h3>
+                    <p style="line-height: 1.8; text-align: left;">
+                        <em>El hijo de Rana, Rinrín renacuajo,<br>
+                        salió esta mañana muy tieso y muy majo<br>
+                        con pantalón corto, corbata a la moda,<br>
+                        sombrero encintado y chupa de boda.<br><br>
+                        
+                        ¡Muchacho, no salgas! - le grita mamá,<br>
+                        pero él hace un gesto y orondo se va.<br>
+                        Halló en el camino a un ratón vecino,<br>
+                        y le dijo: ¡Amigo! venga usted conmigo,<br>
+                        visitemos juntos al señor gallo...</em>
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Recursos de Lectura</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📚 Biblioteca Digital</h3>
+                        <p>Accede a miles de libros gratuitos en español de autores clásicos y contemporáneos.</p>
+                        <a href="https://www.cervantesvirtual.com/" target="_blank" class="btn">Biblioteca Virtual</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>✏️ Ejercicios de Ortografía</h3>
+                        <p>Practica acentuación, puntuación y reglas ortográficas con ejercicios interactivos.</p>
+                        <a href="https://www.reglasdortografia.com/" target="_blank" class="btn">Practicar</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>El español es el segundo idioma más hablado del mundo por número de hablantes nativos (más de 500 millones). Colombia tiene una de las variedades más claras del español, reconocida internacionalmente por su pronunciación y entonación.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

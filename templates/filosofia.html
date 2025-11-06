@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filosofía - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-filosofia">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🧠 Filosofía</h1>
+            <p>Reflexiona sobre las grandes preguntas de la existencia humana</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Grandes Pensadores</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Sócrates (470-399 a.C.)</h3>
+                        <p>"Solo sé que no sé nada" - Fundador del método socrático basado en preguntas y respuestas para alcanzar la verdad.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Platón (428-348 a.C.)</h3>
+                        <p>Creador de la teoría de las Ideas. Fundó la Academia de Atenas, primera institución de educación superior.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Aristóteles (384-322 a.C.)</h3>
+                        <p>Padre de la lógica formal. Estudió ética, política, metafísica y ciencias naturales.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>René Descartes (1596-1650)</h3>
+                        <p>"Pienso, luego existo" - Padre de la filosofía moderna y el racionalismo.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Immanuel Kant (1724-1804)</h3>
+                        <p>Desarrolló el imperativo categórico: "Actúa de tal modo que tu acción pueda ser ley universal".</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Friedrich Nietzsche (1844-1900)</h3>
+                        <p>"Dios ha muerto" - Crítico de la moral tradicional, propuso el concepto del superhombre.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Ramas de la Filosofía</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🤔 Metafísica</h3>
+                        <p>Estudia la naturaleza de la realidad, el ser y la existencia. ¿Qué es real? ¿Qué existe?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💭 Epistemología</h3>
+                        <p>Teoría del conocimiento. ¿Qué podemos conocer? ¿Cómo sabemos lo que sabemos?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚖️ Ética</h3>
+                        <p>Estudia el bien, el mal y la moral. ¿Qué es lo correcto? ¿Cómo debemos vivir?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏛️ Filosofía Política</h3>
+                        <p>Reflexiona sobre el gobierno, la justicia y los derechos. ¿Qué es un estado justo?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎨 Estética</h3>
+                        <p>Filosofía del arte y la belleza. ¿Qué es bello? ¿Qué es el arte?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🗣️ Lógica</h3>
+                        <p>Estudia el razonamiento válido. ¿Cómo argumentar correctamente?</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: ¿Qué es la Filosofía?</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/1A_CAkYt3GY" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <div class="parallax-quote" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920') center/cover;">
+                <h3>"La vida no examinada no vale la pena ser vivida" <br><span style="font-size: 0.7em; opacity: 0.9;">- Sócrates</span></h3>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>La palabra "filosofía" viene del griego y significa "amor a la sabiduría" (philo = amor, sophia = sabiduría). Los antiguos filósofos griegos no solo pensaban sobre cuestiones abstractas, ¡también fueron matemáticos, científicos y políticos!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

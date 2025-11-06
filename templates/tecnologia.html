@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-tecnologia">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>💻 Tecnología e Informática</h1>
+            <p>Aprende programación y desarrollo web desde cero</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Lenguajes de Programación</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🌐 HTML</h3>
+                        <p>Lenguaje de marcado para crear la estructura de páginas web. Define títulos, párrafos, imágenes y enlaces.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎨 CSS</h3>
+                        <p>Lenguaje de estilos para diseñar y dar formato visual a las páginas web. Colores, fuentes y diseño.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ JavaScript</h3>
+                        <p>Lenguaje de programación para crear interactividad en sitios web. Juegos, animaciones y aplicaciones.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🐍 Python</h3>
+                        <p>Lenguaje versátil usado en ciencia de datos, IA, desarrollo web y automatización.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Editor de Código en Vivo</h2>
+                <div class="info-card">
+                    <h3>💻 Prueba tu Código</h3>
+                    <p>Visita estos editores online para practicar programación en tiempo real:</p>
+                    <div class="cards-grid" style="margin-top: 20px;">
+                        <div class="info-card">
+                            <h3>CodePen</h3>
+                            <p>Editor HTML, CSS y JavaScript en vivo</p>
+                            <a href="https://codepen.io/pen/" target="_blank" class="btn">Abrir Editor</a>
+                        </div>
+                        <div class="info-card">
+                            <h3>Replit</h3>
+                            <p>IDE completo para múltiples lenguajes</p>
+                            <a href="https://replit.com/languages" target="_blank" class="btn">Comenzar</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Estructura de una Página Web</h2>
+                <div class="info-card">
+                    <h3>📋 Componentes Básicos</h3>
+                    <pre style="background: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este es mi primer sitio web.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video Tutorial: Introducción al Desarrollo Web</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/MJkdaVFHrto" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Recursos de Aprendizaje</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📚 W3Schools</h3>
+                        <p>Tutoriales interactivos de HTML, CSS, JavaScript y más.</p>
+                        <a href="https://www.w3schools.com/" target="_blank" class="btn">Aprender</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎓 FreeCodeCamp</h3>
+                        <p>Aprende a programar gratis con proyectos prácticos.</p>
+                        <a href="https://www.freecodecamp.org/" target="_blank" class="btn">Comenzar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🚀 CodePen</h3>
+                        <p>Experimenta con código HTML, CSS y JS en tiempo real.</p>
+                        <a href="https://codepen.io/" target="_blank" class="btn">Practicar</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "El código es poesía."
+                <span class="author">- Automattic (WordPress)</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>El primer programador de la historia fue una mujer: Ada Lovelace, quien en 1843 escribió el primer algoritmo destinado a ser procesado por una máquina. ¡La programación tiene más de 180 años de historia!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

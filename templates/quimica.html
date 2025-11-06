@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-quimica">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>⚗️ Química</h1>
+            <p>Explora reacciones, elementos y el mundo molecular</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Tabla Periódica Interactiva</h2>
+                <div class="embed-container">
+                    <iframe src="https://ptable.com/#Orbital" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Simulador PhET: Reacciones Químicas</h2>
+                <div class="embed-container">
+                    <iframe src="https://phet.colorado.edu/sims/html/reactants-products-and-leftovers/latest/reactants-products-and-leftovers_es.html" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Tipos de Enlaces Químicos</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🔗 Enlace Iónico</h3>
+                        <p>Transferencia de electrones entre un metal y un no metal. Ejemplo: NaCl (sal común).</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🤝 Enlace Covalente</h3>
+                        <p>Compartición de electrones entre no metales. Ejemplo: H₂O (agua), CO₂ (dióxido de carbono).</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Enlace Metálico</h3>
+                        <p>Electrones libres compartidos entre átomos metálicos. Ejemplo: Fe (hierro), Cu (cobre).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Reacciones Químicas Comunes</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🔥 Combustión</h3>
+                        <p>Reacción exotérmica con oxígeno que produce calor y luz. Ejemplo: CH₄ + 2O₂ → CO₂ + 2H₂O + Energía</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Neutralización</h3>
+                        <p>Ácido + Base → Sal + Agua. Ejemplo: HCl + NaOH → NaCl + H₂O</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🔄 Descomposición</h3>
+                        <p>Un compuesto se divide en sustancias más simples. Ejemplo: 2H₂O₂ → 2H₂O + O₂</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌟 Síntesis</h3>
+                        <p>Dos o más sustancias se combinan. Ejemplo: 2H₂ + O₂ → 2H₂O</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Quiz: Estados de la Materia</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        ¿Cuál es el cuarto estado de la materia, además de sólido, líquido y gaseoso?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-quim1', 'Plasma', 'Plasma')">
+                            Plasma
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-quim1', 'Vapor', 'Plasma')">
+                            Vapor
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-quim1', 'Coloide', 'Plasma')">
+                            Coloide
+                        </div>
+                    </div>
+                    <div id="result-q-quim1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Química en la Vida Cotidiana</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/0JbdBG2cWzA" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "La química es, en cierto sentido, el destino."
+                <span class="author">- Primo Levi</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>El oro es tan maleable que una sola onza (28 gramos) puede extenderse en un hilo de 80 kilómetros de largo. Además, ¡el agua caliente se congela más rápido que el agua fría! Este fenómeno se conoce como el efecto Mpemba.</p>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🧪 Simuladores PhET</h3>
+                        <p>Laboratorios virtuales de química interactivos y gratuitos.</p>
+                        <a href="https://phet.colorado.edu/es/simulations/filter?subjects=chemistry&type=html,prototype" target="_blank" class="btn">Explorar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Tabla Periódica Avanzada</h3>
+                        <p>Explora propiedades, historia y aplicaciones de cada elemento.</p>
+                        <a href="https://www.ptable.com/" target="_blank" class="btn">Visitar</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

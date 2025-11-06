@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglés - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-ingles">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🇬🇧 English</h1>
+            <p>Learn and practice English with interactive activities</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Common Expressions / Expresiones Cotidianas</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>👋 Greetings</h3>
+                        <p><strong>Hello!</strong> - ¡Hola!<br>
+                        <strong>How are you?</strong> - ¿Cómo estás?<br>
+                        <strong>Nice to meet you</strong> - Encantado de conocerte</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🙏 Polite Phrases</h3>
+                        <p><strong>Please</strong> - Por favor<br>
+                        <strong>Thank you</strong> - Gracias<br>
+                        <strong>You're welcome</strong> - De nada</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🗣️ Questions</h3>
+                        <p><strong>What's your name?</strong> - ¿Cuál es tu nombre?<br>
+                        <strong>Where are you from?</strong> - ¿De dónde eres?<br>
+                        <strong>How old are you?</strong> - ¿Cuántos años tienes?</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⏰ Time Expressions</h3>
+                        <p><strong>What time is it?</strong> - ¿Qué hora es?<br>
+                        <strong>Today</strong> - Hoy<br>
+                        <strong>Tomorrow</strong> - Mañana</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: English Pronunciation</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/dfoRdKuOF0I" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Vocabulary Quiz</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        What is the correct translation of "Biblioteca"?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('eng1', 'Library', 'Library')">
+                            Library
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('eng1', 'Bookstore', 'Library')">
+                            Bookstore
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('eng1', 'Librarian', 'Library')">
+                            Librarian
+                        </div>
+                    </div>
+                    <div id="result-eng1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Learning Resources</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>🦉 Duolingo</h3>
+                        <p>Aprende inglés gratis con lecciones cortas y divertidas.</p>
+                        <a href="https://www.duolingo.com/" target="_blank" class="btn">Practicar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎮 British Council</h3>
+                        <p>Juegos, videos y actividades para aprender inglés.</p>
+                        <a href="https://learnenglish.britishcouncil.org/" target="_blank" class="btn">Explorar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>📚 BBC Learning English</h3>
+                        <p>Recursos gratuitos de la BBC para todos los niveles.</p>
+                        <a href="https://www.bbc.co.uk/learningenglish" target="_blank" class="btn">Aprender</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "The limits of my language mean the limits of my world."
+                <span class="author">- Ludwig Wittgenstein</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>💡 Did you know? / ¿Sabías qué?</h4>
+                <p>El inglés tiene más de 170,000 palabras en uso y añade unas 1,000 palabras nuevas cada año. La palabra "set" tiene más de 430 definiciones diferentes, ¡más que cualquier otra palabra en inglés!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

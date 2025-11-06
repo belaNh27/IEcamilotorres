@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación Física - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-educacionfisica">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>⚽ Educación Física</h1>
+            <p>Mantente activo, saludable y en forma</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Deportes Populares</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">⚽</span>
+                        <h3>Fútbol</h3>
+                        <p>El deporte más popular del mundo. Mejora la coordinación y el trabajo en equipo.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">🏀</span>
+                        <h3>Baloncesto</h3>
+                        <p>Desarrolla agilidad, salto y precisión en el lanzamiento.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">🏐</span>
+                        <h3>Voleibol</h3>
+                        <p>Fortalece brazos y piernas, mejora reflejos y comunicación.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">🏃</span>
+                        <h3>Atletismo</h3>
+                        <p>Carreras, saltos y lanzamientos. Base de todos los deportes.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">🏊</span>
+                        <h3>Natación</h3>
+                        <p>Ejercicio completo que trabaja todo el cuerpo.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <span style="font-size: 3rem;">🚴</span>
+                        <h3>Ciclismo</h3>
+                        <p>Fortalece piernas y sistema cardiovascular.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Calentamiento y Estiramientos</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/8nrSeHgckYE" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Cronómetro de Ejercicio</h2>
+                <div class="interactive-element">
+                    <p>Usa este cronómetro para medir tus tiempos de ejercicio:</p>
+                    <div id="timer-display" class="timer-display">00:00</div>
+                    <div class="controls">
+                        <button class="btn" onclick="startTimer()">Iniciar</button>
+                        <button class="btn btn-secondary" onclick="stopTimer()">Detener</button>
+                        <button class="btn" onclick="resetTimer()">Reiniciar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Quiz: Hábitos Saludables</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        ¿Cuántos minutos de actividad física se recomiendan al día para adolescentes?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('ef1', '60 minutos', '60 minutos')">
+                            60 minutos
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('ef1', '30 minutos', '60 minutos')">
+                            30 minutos
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('ef1', '90 minutos', '60 minutos')">
+                            90 minutos
+                        </div>
+                    </div>
+                    <div id="result-ef1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Beneficios del Ejercicio</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>❤️ Salud Cardiovascular</h3>
+                        <p>Fortalece el corazón, mejora la circulación y reduce el riesgo de enfermedades cardíacas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💪 Fuerza Muscular</h3>
+                        <p>Desarrolla músculos fuertes y mejora la postura corporal.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🧠 Salud Mental</h3>
+                        <p>Reduce el estrés, mejora el ánimo y aumenta la concentración.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>😴 Mejor Sueño</h3>
+                        <p>Ayuda a dormir mejor y tener un descanso más reparador.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>Hacer ejercicio libera endorfinas, conocidas como las "hormonas de la felicidad". ¡Solo 20 minutos de actividad física pueden mejorar tu estado de ánimo por hasta 12 horas! Además, el ejercicio regular puede mejorar tu memoria y capacidad de aprendizaje.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

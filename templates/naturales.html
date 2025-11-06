@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciencias Naturales - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-naturales">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🌿 Ciencias Naturales</h1>
+            <p>Descubre los secretos de la naturaleza y el método científico</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Simulador: El Ciclo del Agua</h2>
+                <p>Explora el ciclo del agua y sus procesos:</p>
+                <div class="embed-container">
+                    <iframe src="https://phet.colorado.edu/sims/html/states-of-matter-basics/latest/states-of-matter-basics_es.html" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Estados de la Materia</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>❄️ Sólido</h3>
+                        <p>Partículas muy juntas y ordenadas. Forma y volumen definidos. Ejemplo: hielo, madera, metal.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💧 Líquido</h3>
+                        <p>Partículas más separadas, se mueven libremente. Volumen definido pero forma variable. Ejemplo: agua, aceite.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💨 Gaseoso</h3>
+                        <p>Partículas muy separadas y en movimiento constante. Sin forma ni volumen definidos. Ejemplo: aire, vapor.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⚡ Plasma</h3>
+                        <p>Gas ionizado con propiedades especiales. Presente en estrellas y rayos. El 99% del universo es plasma.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video: Mezclas y Separación</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/sKN9BDHkPM4" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Mini Quiz</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        ¿Cuál es el proceso por el cual las plantas producen su alimento?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-nat1', 'Fotosíntesis', 'Fotosíntesis')">
+                            Fotosíntesis
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-nat1', 'Respiración', 'Fotosíntesis')">
+                            Respiración celular
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q-nat1', 'Digestión', 'Fotosíntesis')">
+                            Digestión
+                        </div>
+                    </div>
+                    <div id="result-q-nat1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>Colombia es el segundo país más biodiverso del mundo, con más de 56,000 especies registradas. Tenemos el mayor número de especies de aves (más de 1,900) y orquídeas (más de 4,000) del planeta. ¡Nuestra riqueza natural es increíble!</p>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Método Científico</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1. Observación</h3>
+                        <p>Identifica un fenómeno o problema a investigar mediante la observación cuidadosa.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2. Pregunta</h3>
+                        <p>Formula una pregunta específica sobre lo observado.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>3. Hipótesis</h3>
+                        <p>Propone una explicación tentativa basada en conocimientos previos.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>4. Experimentación</h3>
+                        <p>Diseña y realiza experimentos para probar la hipótesis.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>5. Análisis</h3>
+                        <p>Analiza los datos obtenidos durante la experimentación.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>6. Conclusión</h3>
+                        <p>Determina si la hipótesis es correcta o debe ser modificada.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

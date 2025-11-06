@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-matematicas">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>📐 Matemáticas</h1>
+            <p>Explora el fascinante mundo de los números, ecuaciones y geometría</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Temas Principales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📊 Álgebra II</h3>
+                        <p>Ecuaciones cuadráticas, sistemas de ecuaciones, funciones polinomiales y exponenciales. Domina las herramientas algebraicas avanzadas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📐 Trigonometría</h3>
+                        <p>Funciones trigonométricas, identidades, ecuaciones y aplicaciones en triángulos. Explora el mundo de los ángulos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>∫ Introducción al Cálculo</h3>
+                        <p>Límites, derivadas básicas y conceptos fundamentales del cálculo diferencial e integral.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎲 Probabilidad</h3>
+                        <p>Estadística descriptiva, probabilidad básica, combinatoria y análisis de datos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Calculadora Gráfica GeoGebra</h2>
+                <p>Explora funciones, ecuaciones y geometría de forma interactiva:</p>
+                <div class="simulator-container">
+                    <iframe src="https://www.geogebra.org/calculator" allowfullscreen style="background: white;"></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Video Educativo</h2>
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Desafío del Día</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        Resuelve la ecuación: 2x² - 8x + 6 = 0
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('q1', 'x = 1 o x = 3', 'x = 1 o x = 3')">
+                            x = 1 o x = 3
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q1', 'x = 2 o x = 4', 'x = 1 o x = 3')">
+                            x = 2 o x = 4
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('q1', 'x = -1 o x = -3', 'x = 1 o x = 3')">
+                            x = -1 o x = -3
+                        </div>
+                    </div>
+                    <div id="result-q1" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <div class="quote-box">
+                "Las matemáticas son el alfabeto con el cual Dios ha escrito el universo."
+                <span class="author">- Galileo Galilei</span>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📖 Khan Academy</h3>
+                        <p>Tutoriales en video y ejercicios prácticos de todos los temas de matemáticas.</p>
+                        <a href="https://es.khanacademy.org/math" target="_blank" class="btn">Visitar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎮 Photomath</h3>
+                        <p>Escribe ecuaciones y obtén soluciones paso a paso con explicaciones detalladas.</p>
+                        <a href="https://photomath.com/es" target="_blank" class="btn">Visitar</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>🧮 Wolfram Alpha</h3>
+                        <p>Motor computacional para resolver problemas matemáticos complejos.</p>
+                        <a href="https://www.wolframalpha.com/" target="_blank" class="btn">Visitar</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>El número π (pi) tiene infinitos decimales y nunca se repite. Se han calculado más de 62 billones de dígitos de π usando supercomputadoras. ¡Pero con solo 39 dígitos podrías calcular la circunferencia del universo observable con una precisión del tamaño de un átomo de hidrógeno!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

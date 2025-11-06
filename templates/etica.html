@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ética - Smart Edu 2025</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body class="materia-etica">
+    <div class="container">
+        <a href="/" class="back-link">← Volver al Inicio</a>
+        
+        <div class="materia-header">
+            <h1>🌟 Ética y Valores</h1>
+            <p>Desarrolla habilidades socioemocionales y valores para la vida</p>
+        </div>
+
+        <div class="materia-content">
+            <section class="section">
+                <h2 class="section-title">Habilidades Blandas Esenciales</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>❤️ Empatía</h3>
+                        <p>Capacidad de ponerse en el lugar del otro y comprender sus emociones y perspectivas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🤝 Respeto</h3>
+                        <p>Valorar a las personas independientemente de sus diferencias, creencias o circunstancias.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💪 Resiliencia</h3>
+                        <p>Habilidad de superar dificultades y adaptarse positivamente a situaciones adversas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🗣️ Comunicación</h3>
+                        <p>Expresar ideas claramente y escuchar activamente a los demás.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>👥 Trabajo en Equipo</h3>
+                        <p>Colaborar efectivamente con otros para alcanzar objetivos comunes.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎯 Responsabilidad</h3>
+                        <p>Cumplir con compromisos y asumir las consecuencias de nuestras acciones.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Miniquiz: ¿Qué Harías Tú?</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        Encuentras una billetera con dinero en la calle. ¿Qué haces?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('et1', 'Buscar al dueño', 'Buscar al dueño')">
+                            La llevas a la policía o intentas encontrar al dueño
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('et1', 'Quedármela', 'Buscar al dueño')">
+                            Te la quedas porque nadie te vio
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('et1', 'Ignorarla', 'Buscar al dueño')">
+                            La dejas ahí y sigues caminando
+                        </div>
+                    </div>
+                    <div id="result-et1" class="quiz-result"></div>
+                </div>
+
+                <div class="quiz-container" style="margin-top: 30px;">
+                    <div class="quiz-question">
+                        Un compañero está siendo excluido del grupo. ¿Cómo actúas?
+                    </div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkQuizAnswer('et2', 'Incluirlo', 'Incluirlo')">
+                            Lo incluyes y hablas con el grupo sobre la importancia del respeto
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('et2', 'Ignorarlo', 'Incluirlo')">
+                            No haces nada para no tener problemas
+                        </div>
+                        <div class="quiz-option" onclick="checkQuizAnswer('et2', 'Unirte', 'Incluirlo')">
+                            Te unes al grupo que lo excluye
+                        </div>
+                    </div>
+                    <div id="result-et2" class="quiz-result"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Frases Inspiradoras</h2>
+                <div class="quote-box">
+                    "Sé el cambio que quieres ver en el mundo."
+                    <span class="author">- Mahatma Gandhi</span>
+                </div>
+                <div class="quote-box" style="margin-top: 20px;">
+                    "No hay camino para la paz, la paz es el camino."
+                    <span class="author">- Mahatma Gandhi</span>
+                </div>
+                <div class="quote-box" style="margin-top: 20px;">
+                    "La educación es el arma más poderosa para cambiar el mundo."
+                    <span class="author">- Nelson Mandela</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Historia con Moraleja</h2>
+                <div class="info-card" style="padding: 30px;">
+                    <h3>🦁 El León y el Ratón</h3>
+                    <p>Un pequeño ratón despertó accidentalmente a un león que dormía. El león lo atrapó con su garra, pero el ratón le suplicó que lo dejara ir, prometiendo ayudarlo algún día.</p>
+                    
+                    <p>El león, divertido por la idea de que un ratón pudiera ayudarlo, lo liberó. Tiempo después, el león quedó atrapado en la red de un cazador. El ratón escuchó sus rugidos, corrió a ayudarlo y royó las cuerdas hasta liberarlo.</p>
+                    
+                    <p><strong>Moraleja:</strong> Nunca subestimes a nadie. Los pequeños actos de bondad pueden tener grandes recompensas. Todos podemos ayudar, sin importar nuestro tamaño o posición.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Los Cuatro Acuerdos</h2>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>1️⃣ Sé Impecable con tus Palabras</h3>
+                        <p>Habla con integridad. Di solo lo que piensas. No hables contra ti mismo ni chismees sobre otros.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>2️⃣ No Te Tomes Nada Personal</h3>
+                        <p>Lo que otros dicen o hacen es una proyección de su propia realidad, no de ti.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>3️⃣ No Hagas Suposiciones</h3>
+                        <p>Pregunta y comunica claramente lo que quieres. Evita malentendidos.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>4️⃣ Haz Siempre lo Mejor que Puedas</h3>
+                        <p>Tu mejor esfuerzo cambia de momento a momento. Hazlo con amor y sin juzgarte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="fun-fact">
+                <h4>💡 ¿Sabías qué?</h4>
+                <p>Los estudios demuestran que las personas con alta inteligencia emocional tienen mejores relaciones, más éxito profesional y mayor bienestar mental. La empatía, la autorregulación y las habilidades sociales se pueden desarrollar y mejorar con práctica.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
