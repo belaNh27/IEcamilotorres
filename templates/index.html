@@ -13,93 +13,87 @@
 </head>
 
 <body>
-   <header class="main-header">
-  <div class="header-left">
-    <a href="{{ url_for('index') }}" class="logo-link">    
-      <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
-    </a>
-  </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}current{% endif %}">Inicio</a></li>
-      <li><a href="{{ url_for('quienes_somos') }}" class="{% if request.path == url_for('quienes_somos') %}current{% endif %}">¿Quiénes Somos?</a></li>
-      <li><a href="{{ url_for('simbolos_institucionales') }}" class="{% if request.path == url_for('simbolos_institucionales') %}current{% endif %}">Símbolos Inst.</a></li>
-      <li><a href="{{ url_for('imagenes') }}" class="{% if request.path == url_for('imagenes') %}current{% endif %}">Galería</a></li>
-      <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">ICFES</a></li>
-      <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
-      <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
-      <!-- ✅ Solo UN botón de cambio de tema: -->
-      <li>
-        <div class="theme-switcher">
-          <button id="theme-btn" title="Cambiar modo">🌗</button>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <button class="menu-toggle" aria-label="Abrir menú">
-    <i class="fas fa-bars"></i>
-  </button>
-</header>
-
- <main>
-    <section class="carousel-container">
-        <div class="carousel">
-
-            <div class="slide active">
-                <img src="{{ url_for('static', filename='images/escuela1.jpg') }}" alt="Escuela 1">
-                <div class="caption">Bienvenidos a IE Camilo Torres</div>
-            </div>
-
-            <div class="slide">
-                <a href="https://ecomitted.onrender.com/" target="_blank">
-                    <img src="{{ url_for('static', filename='images/escuela2.jpg') }}" alt="Escuela 2">
-                    <div class="caption">Formación integral con valores</div>
-                </a>
-            </div>
-
-            <div class="slide">
-                <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
-                <div class="caption">Innovación en la enseñanza</div>
-            </div>
-
-            <div class="slide">
-                <img src="{{ url_for('static', filename='images/Escuela4.png') }}" alt="Escuela 4">
-                <div class="caption">¡Dale click y conoce más!</div>
-            </div>
-
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
-
-            <div class="dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </section>
-</main>
-<section class="content-section">
-    <div class="container">
-        <h2></h2>
-        <p>SMART-EDU</p>
-        <div style="margin-top: 30px;">
-            <a href="{{ url_for('smartedu') }}" 
-               class="icfes-button" 
-               style="display: block; width: 100%; max-width: 100%; margin: 0 auto; text-decoration: none;">
-                
-                <img src="{{ url_for('static', filename='images/smartedu.png') }}"
-                     alt="SmartEdu"
-                     style="width: 100%; height: auto; display: block;">
-                
-                <div style="text-align: center; margin-top: 10px;">
-                    <strong>Aprendamos</strong><br>
-                    <span>¡Un espacio para los camilistas!</span>
-                </div>
+    <header class="main-header">
+        <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo-link">    
+                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
             </a>
         </div>
-    </div>
-</section>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}current{% endif %}">Inicio</a></li>
+                <li><a href="{{ url_for('quienes_somos') }}" class="{% if request.path == url_for('quienes_somos') %}current{% endif %}">¿Quiénes Somos?</a></li>
+                <li><a href="{{ url_for('simbolos_institucionales') }}" class="{% if request.path == url_for('simbolos_institucionales') %}current{% endif %}">Símbolos Inst.</a></li>
+                <li><a href="{{ url_for('imagenes') }}" class="{% if request.path == url_for('imagenes') %}current{% endif %}">Galería</a></li>
+                <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">ICFES</a></li>
+                <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
+                <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
+                <!-- ✅ Solo un botón para cambiar el modo de tema -->
+                <li>
+                  <div class="theme-switcher">
+                    <button id="theme-btn" title="Cambiar modo">🌗</button>
+                  </div>
+                </li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="carousel-container">
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="{{ url_for('static', filename='images/escuela1.jpg') }}" alt="Escuela 1">
+                    <div class="caption">Bienvenidos a IE Camilo Torres</div>
+                </div>
+                <div class="slide">
+                    <a href="https://ecomitted.onrender.com/" target="_blank">
+                        <img src="{{ url_for('static', filename='images/escuela2.jpg') }}" alt="Escuela 2">
+                        <div class="caption">Formación integral con valores</div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='images/escuela3.jpg') }}" alt="Escuela 3">
+                    <div class="caption">Innovación en la enseñanza</div>
+                </div>
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='images/Escuela4.png') }}" alt="Escuela 4">
+                    <div class="caption">¡Dale click y conoce más!</div>
+                </div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2></h2>
+                <p>SMART-EDU</p>
+                <div style="margin-top: 30px;">
+                    <a href="{{ url_for('smartedu') }}" 
+                       class="icfes-button" 
+                       style="display: block; width: 100%; max-width: 100%; margin: 0 auto; text-decoration: none;">
+                        
+                        <img src="{{ url_for('static', filename='images/smartedu.png') }}"
+                             alt="SmartEdu"
+                             style="width: 100%; height: auto; display: block;">
+                        
+                        <div style="text-align: center; margin-top: 10px;">
+                            <strong>Aprendamos</strong><br>
+                            <span>¡Un espacio para los camilistas!</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section class="social-links-section">
             <div class="container social-links-container">
@@ -130,21 +124,21 @@
                 <h2>Noticias y Novedades</h2>
                 <p>Mantente al día con los últimos eventos y anuncios de nuestra institución.</p>
                 <div class="container">
-    <h2>🎉 Festival Gastronómico 2025</h2>
-    <p>
-        Vive con nosotros esta gran celebración que reúne a estudiantes, docentes y familias en un espacio de integración, cultura y mucho sabor.  
-        ¡Haz clic y conoce todos los detalles del evento gastronómico más esperado del año en la I.E. Camilo Torres!
-    </p>
-    <div style="margin-top: 30px;">
-        <a href="{{ url_for('festival') }}" class="icfes-button" style="display: inline-flex; max-width: 400px; margin: 0 auto; background-color: #e63946; color: #fff; text-decoration: none; padding: 15px 20px; border-radius: 12px; align-items: center; gap: 15px;">
-            <i class="fas fa-utensils" style="font-size: 2.5em;"></i>
-            <div>
-                <strong>Ver Festival</strong><br>
-                <span>Menú, horarios y más</span>
-            </div>
-        </a>
-    </div>
-</div>
+                    <h2>🎉 Festival Gastronómico 2025</h2>
+                    <p>
+                        Vive con nosotros esta gran celebración que reúne a estudiantes, docentes y familias en un espacio de integración, cultura y mucho sabor.  
+                        ¡Haz clic y conoce todos los detalles del evento gastronómico más esperado del año en la I.E. Camilo Torres!
+                    </p>
+                    <div style="margin-top: 30px;">
+                        <a href="{{ url_for('festival') }}" class="icfes-button" style="display: inline-flex; max-width: 400px; margin: 0 auto; background-color: #e63946; color: #fff; text-decoration: none; padding: 15px 20px; border-radius: 12px; align-items: center; gap: 15px;">
+                            <i class="fas fa-utensils" style="font-size: 2.5em;"></i>
+                            <div>
+                                <strong>Ver Festival</strong><br>
+                                <span>Menú, horarios y más</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F1513869286238772%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
                 <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsoycamilista%2Fvideos%2F9943270275739858%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
             </div>
@@ -155,117 +149,122 @@
         <p>Institución Educativa Camilo Torres &copy; 2025</p>
     </footer>
 
+    <!-- JS para modo tema -->
     <script>
-const MODES = ['light', 'dark', 'semilight'];
-const ICONS = ['☀️', '🌙', '🌗']; // Íconos para cada modo
-let current = MODES.indexOf(localStorage.getItem('theme')) >= 0 ? MODES.indexOf(localStorage.getItem('theme')) : 1;
-
-function setTheme(theme) {
-  document.body.classList.remove('theme-light', 'theme-dark', 'theme-semilight');
-  document.body.classList.add('theme-' + theme);
-  localStorage.setItem('theme', theme);
-  document.getElementById('theme-btn').innerText = ICONS[MODES.indexOf(theme)];
-}
-
-window.onload = function() {
-  setTheme(MODES[current]);
-  document.getElementById('theme-btn').onclick = function() {
-    current = (current + 1) % MODES.length;
-    setTheme(MODES[current]);
-  };
-};
-        document.addEventListener('DOMContentLoaded', function() {
-            // JavaScript para el carrusel
-            const slides = document.querySelectorAll('.carousel .slide');
-            const dots = document.querySelectorAll('.carousel .dot');
-            const prevBtn = document.querySelector('.carousel .prev');
-            const nextBtn = document.querySelector('.carousel .next');
-            let current = 0;
-            let timer;
-
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                slides[index].classList.add('active');
-                dots[index].classList.add('active');
-                current = index;
-            }
-
-            function nextSlide() {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            }
-
-            function prevSlide() {
-                current = (current - 1 + slides.length) % slides.length;
-                showSlide(current);
-            }
-
-            function startAutoSlide() {
-                timer = setInterval(nextSlide, 5000);
-            }
-
-            function resetAutoSlide() {
-                clearInterval(timer);
-                startAutoSlide();
-            }
-
-            if (slides.length > 0 && dots.length > 0) {
-                dots.forEach((dot, i) => {
-                    dot.addEventListener('click', () => {
-                        showSlide(i);
-                        resetAutoSlide();
-                    });
-                });
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        prevSlide();
-                        resetAutoSlide();
-                    });
-                }
-
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        nextSlide();
-                        resetAutoSlide();
-                    });
-                }
-
-                showSlide(current);
-                startAutoSlide();
-            }
-
-            // Menú móvil
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-
-            if (menuToggle && mainNav) {
-                menuToggle.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
-                    
-                    const icon = menuToggle.querySelector('i');
-                    if (mainNav.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-
-                const navLinks = mainNav.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mainNav.classList.remove('active');
-                        const icon = menuToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    });
-                });
-            }
-        });
+    // Tema
+    const MODES = ['light', 'dark', 'semilight'];
+    const ICONS = ['☀️', '🌙', '🌗'];
+    let themeCurrent = MODES.indexOf(localStorage.getItem('theme'));
+    if (themeCurrent === -1) themeCurrent = 1;
+    
+    function setTheme(theme) {
+      document.body.classList.remove('theme-light', 'theme-dark', 'theme-semilight');
+      document.body.classList.add('theme-' + theme);
+      localStorage.setItem('theme', theme);
+      document.getElementById('theme-btn').innerText = ICONS[MODES.indexOf(theme)];
+    }
+    
+    window.onload = function() {
+      setTheme(MODES[themeCurrent]);
+      document.getElementById('theme-btn').onclick = function() {
+        themeCurrent = (themeCurrent + 1) % MODES.length;
+        setTheme(MODES[themeCurrent]);
+      };
+    };
     </script>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // JavaScript para el carrusel
+        const slides = document.querySelectorAll('.carousel .slide');
+        const dots = document.querySelectorAll('.carousel .dot');
+        const prevBtn = document.querySelector('.carousel .prev');
+        const nextBtn = document.querySelector('.carousel .next');
+        let current = 0; // solo para carrusel
+        let timer;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            current = index;
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        function prevSlide() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+
+        function startAutoSlide() {
+            timer = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(timer);
+            startAutoSlide();
+        }
+
+        if (slides.length > 0 && dots.length > 0) {
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    resetAutoSlide();
+                });
+            });
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetAutoSlide();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetAutoSlide();
+                });
+            }
+
+            showSlide(current);
+            startAutoSlide();
+        }
+
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                
+                const icon = menuToggle.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            const navLinks = mainNav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+    });
+    </script>
 </body>
 </html>
