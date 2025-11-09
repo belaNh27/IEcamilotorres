@@ -16,14 +16,26 @@
 .theme-semilight {
   --bg: #ececec;
   --text: #202124;
-}
-
-/* Estilos generales modernos */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.theme-light {
+  --bg: #ffffff;
+  --text: #202124;
+}
+
+.theme-dark {
+  --bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --text: #e8eaed;
+}
+
+.theme-semilight {
+  --bg: #ececec;
+  --text: #202124;
 }
 
 body {
@@ -33,12 +45,9 @@ body {
     line-height: 1.6;
     color: var(--text);
     overflow-x: hidden;
-    padding-top: 80px;  /* 👈 igual al min-height del header */
+    padding-top: 80px;
     transition: background 0.4s, color 0.4s;
 }
-
-
-
 
 
 
