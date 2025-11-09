@@ -29,12 +29,20 @@
                 <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">Preparación ICFES</a></li>
                 <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
                 <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
-
+<!-- Botón para cambiar el tema -->
+<div class="theme-switcher">
+  <button id="theme-btn" title="Cambiar modo">🌗</button>
+</div>
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
         </button>
+
+        <!-- Botón para cambiar el tema -->
+<div class="theme-switcher">
+  <button id="theme-btn" title="Cambiar modo">🌗</button>
+</div>
     </header>
 
  <main>
