@@ -160,6 +160,24 @@
     </footer>
 
     <script>
+const MODES = ['light', 'dark', 'semilight'];
+const ICONS = ['☀️', '🌙', '🌗']; // Íconos para cada modo
+let current = MODES.indexOf(localStorage.getItem('theme')) >= 0 ? MODES.indexOf(localStorage.getItem('theme')) : 1;
+
+function setTheme(theme) {
+  document.body.classList.remove('theme-light', 'theme-dark', 'theme-semilight');
+  document.body.classList.add('theme-' + theme);
+  localStorage.setItem('theme', theme);
+  document.getElementById('theme-btn').innerText = ICONS[MODES.indexOf(theme)];
+}
+
+window.onload = function() {
+  setTheme(MODES[current]);
+  document.getElementById('theme-btn').onclick = function() {
+    current = (current + 1) % MODES.length;
+    setTheme(MODES[current]);
+  };
+};
         document.addEventListener('DOMContentLoaded', function() {
             // JavaScript para el carrusel
             const slides = document.querySelectorAll('.carousel .slide');
