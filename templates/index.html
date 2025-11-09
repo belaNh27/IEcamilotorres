@@ -13,37 +13,33 @@
 </head>
 
 <body>
-    
-    <header class="main-header">
-        <div class="header-left">
-            <a href="{{ url_for('index') }}" class="logo-link">    
-                <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
-            </a>
+   <header class="main-header">
+  <div class="header-left">
+    <a href="{{ url_for('index') }}" class="logo-link">    
+      <span class="logo-text"><span class="highlight">IE</span> Camilo Torres</span>
+    </a>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}current{% endif %}">Inicio</a></li>
+      <li><a href="{{ url_for('quienes_somos') }}" class="{% if request.path == url_for('quienes_somos') %}current{% endif %}">¿Quiénes Somos?</a></li>
+      <li><a href="{{ url_for('simbolos_institucionales') }}" class="{% if request.path == url_for('simbolos_institucionales') %}current{% endif %}">Símbolos Inst.</a></li>
+      <li><a href="{{ url_for('imagenes') }}" class="{% if request.path == url_for('imagenes') %}current{% endif %}">Galería</a></li>
+      <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">ICFES</a></li>
+      <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
+      <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
+      <!-- ✅ Solo UN botón de cambio de tema: -->
+      <li>
+        <div class="theme-switcher">
+          <button id="theme-btn" title="Cambiar modo">🌗</button>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="{{ url_for('index') }}" class="{% if request.path == url_for('index') %}current{% endif %}">Inicio</a></li>
-                <li><a href="{{ url_for('quienes_somos') }}" class="{% if request.path == url_for('quienes_somos') %}current{% endif %}">¿Quiénes Somos?</a></li>
-                <li><a href="{{ url_for('simbolos_institucionales') }}" class="{% if request.path == url_for('simbolos_institucionales') %}current{% endif %}">Símbolos Inst.</a></li>
-                <li><a href="{{ url_for('imagenes') }}" class="{% if request.path == url_for('imagenes') %}current{% endif %}">Galería</a></li>
-                <li><a href="{{ url_for('icfes') }}" class="{% if request.path == url_for('icfes') %}current{% endif %}">ICFES</a></li>
-                <li><a href="{{ url_for('anexos') }}" class="{% if request.path == url_for('anexos') %}current{% endif %}">Anexos</a></li>
-                <li><a href="{{ url_for('chatbot') }}" class="{% if request.path == url_for('chatbot') %}current{% endif %}">Chatbot</a></li>
-<!-- Botón para cambiar el tema -->
-<div class="theme-switcher">
-  <button id="theme-btn" title="Cambiar modo">🌗</button>
-</div>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Botón para cambiar el tema -->
-<div class="theme-switcher">
-  <button id="theme-btn" title="Cambiar modo">🌗</button>
-</div>
-    </header>
+      </li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
 
  <main>
     <section class="carousel-container">
